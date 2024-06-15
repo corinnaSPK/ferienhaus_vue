@@ -1,0 +1,274 @@
+:root {
+	--ff-sansserif: Arial, Helvetica, sans-serif;
+	--ff-serif: Georgia, "Times New Roman", Times, serif;
+	/* !colors #################################### */
+	--cl-light: #fff;
+	--cl-light-opa: rgb(255, 255, 255, 0.7);
+	--cl-dark: #000;
+	/* --cl-dark: red; */
+	--cl-dark-accent: hsl(240, 90%, 5%);
+	--cl-dark-accent: hsl(240, 62%, 8%);
+	--cl-dark-accent: #030317;
+	--cl-dark-accent: hsl(240, 74%, 10%);
+	--cl-dark-accent: hsl(240, 755%, 9%);
+	--cl-dark-accent-2: hsl(244, 95%, 8%);
+	--cl-dark-accent-opa: rgba(13, 13, 47, 0.55);
+	--cl-dark-hover: rgb(16, 16, 51);
+	--cl-dark-hover: #080821;
+
+	--cl-text-grey: #282828;
+	/* !fosizes #################################### */
+
+	/* --fs-head-1: 5rem; */
+	--fs-head-1: clamp(2rem, 1rem + 5vw, 4rem);
+	/* --fs-head-2: 4rem; */
+	--fs-head-2: clamp(1.85rem, 1rem + 5vw, 3rem);
+	--fs-head-3: 2.4rem;
+	--fs-head-4: 2.2rem;
+	--fs-copy: 2rem;
+	--fs-small: 1.6rem;
+}
+/* !utilities sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss*/
+
+/* !colors */
+.cl-background-dark-accent {
+	background-color: var(--cl-dark-accent);
+}
+.cl-background-dark {
+	background-color: var(--cl-dark);
+}
+.cl-background-light {
+	background-color: var(--cl-light);
+}
+.cl-text-light {
+	color: var(--cl-light);
+}
+.cl-text-dark {
+	color: var(--cl-dark);
+}
+.cl-text-dark-accent {
+	color: var(--cl-dark-accent);
+}
+.cl-text-grey {
+	color: var(--cl-text-grey);
+}
+/* ! fontsizes */
+.fs-head-main {
+	font-size: var(--fs-head-1);
+}
+
+.fs-head-2 {
+	font-size: var(--fs-head-2);
+}
+
+.fs-head-3 {
+	font-size: var(--fs-head-3);
+}
+
+.fs-head-4 {
+	font-size: var(--fs-head-4);
+}
+
+.fs-copy {
+	font-size: var(--fs-copy);
+}
+
+.fs-small {
+	font-size: var(--fs-small);
+}
+/*! fontfamiliys################################################################################ */
+.ff-serif {
+	font-family: var(--ff-serif);
+}
+.ff-sansserif {
+	font-family: var(--ff-sansserif);
+}
+
+/*! abstände################################################################################ */
+.mb-5em {
+	margin-bottom: 0.5em;
+}
+
+.mb-1em {
+	margin-bottom: 01em;
+}
+
+.mb-3rem {
+	margin-bottom: 3rem;
+}
+
+.mb-5rem {
+	margin-bottom: 5rem;
+}
+
+.mb-7rem {
+	margin-bottom: 7rem;
+}
+
+.mb-10rem {
+	margin-bottom: 10rem;
+}
+.mb-20rem {
+	margin-bottom: 20rem;
+}
+
+.mt-10rem {
+	margin-top: 100px;
+}
+
+.p-1-5 {
+	padding: 1.5rem;
+}
+
+.p-3 {
+	padding: 3rem;
+}
+
+.p-3-in {
+	padding-inline: 3rem;
+}
+.p-5 {
+	padding: 5rem;
+}
+
+.pb-10 {
+	padding-block: 10rem;
+}
+/* !textstyles #################################################################################### */
+.fw-lighter {
+	font-weight: lighter;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.space-3 {
+	letter-spacing: 3px;
+}
+/* !layout */
+.dgridcenter {
+	display: grid;
+	place-content: center;
+}
+.gridminmax {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+.dflexcol {
+	display: flex;
+	flex-direction: column;
+}
+.dflexrow {
+	display: flex;
+	flex-direction: row;
+}
+.talign-center {
+	text-align: center;
+}
+.mcenter {
+	margin-inline: auto;
+}
+/*! borders tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt */
+.bbottom {
+	border-bottom: 1px solid var(--cl-light-opa);
+}
+/*! reset tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	overflow-x: hidden;
+	min-height: 100vh;
+	width: 100vw;
+	max-width: 100%;
+	line-height: 1.5;
+	font-family: var(--ff-sansserif);
+	/* font-family: Georgia, 'Times New Roman', Times, serif; */
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	color: var(--cl-light);
+}
+img {
+	width: 100%;
+	/* height: 100%; */
+	object-fit: cover;
+	border: 1px solid var(--cl-light);
+}
+
+ul {
+	list-style-type: none;
+}
+
+section {
+	/* scroll-padding-top: 5rem;  */
+
+	padding-top: 100px;
+	padding: 150px 0;
+}
+
+/* !default styles from vue color palette from <https://github.com/vuejs/theme>
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+}*/
+
+/* semantic color variables for this project 
+:root {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+} */

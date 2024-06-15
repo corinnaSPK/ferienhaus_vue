@@ -1,0 +1,22 @@
+struktur
+
+home 
+
+	<ul>
+			<li>HERO</li>
+			<li>INTRO</li>
+			<li>ZITAT</li>
+			<li>HOUSES</li>
+			<li>TESTIS</li>
+			<li>FAQ</li>
+			<li>book form </li>
+		</ul>
+
+
+
+houses 
+
+
+
+TODOS
+favicon + seitentitel 
