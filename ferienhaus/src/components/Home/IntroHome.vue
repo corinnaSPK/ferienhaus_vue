@@ -4,6 +4,7 @@
 			<h2 class="intro__box-head fs-head-2 fw-lighter mb-5em">
 				Urlaubsreif? Hier beginnt Ihr Traumurlaub!
 			</h2>
+
 			<p class="intro__box-copy fs-copy">
 				Erleben und genießen Sie die schönsten Tage des Jahres in einem unserer
 				gemütlichund komfortabelausgestatteten Häuser. Bewusst sind die Häuser
@@ -24,14 +25,14 @@
 			<ul class="flexwrap">
 				<li class="">
 					<img
-						src="../../../public/img/bs-die-finische-fasssauna.jpg"
+						src="../../assets/img/bs-die-finische-fasssauna.jpg"
 						alt="Foto Fasssauna"
 						srcset=""
 					/>
 				</li>
 				<li class="">
 					<img
-						src="../../../public/img/k-img-0169_640_0.jpg"
+						src="../../assets/img/k-img-0169_640_0.jpg"
 						alt="Foto Strandkorb"
 						srcset=""
 					/>
@@ -39,24 +40,45 @@
 
 				<li class="">
 					<img
-						src="../../../public/img/kue-wiga_c2000_2000.jpg"
+						src="../../assets/img/kue-wiga_c2000_2000.jpg"
 						alt="Foto Wintergarten"
 						srcset=""
 					/>
 				</li>
 				<li class="">
 					<img
-						src="../../../public/img/kamin_mg_quer.jpg"
+						src="../../assets/img/kamin_mg_quer.jpg"
 						alt="Foto Kamin"
 						srcset=""
 					/>
 				</li>
 			</ul>
 		</div>
+		<div class="test">
+			<div class="card" v-for="item in navItems" ref="card">
+				<p ref="itemref">{{ item.name }}</p>
+				<p v-for="(subitem, index) in item.subgroup">
+					<button>{{ subitem }}</button>
+				</p>
+			</div>
+		</div>
 	</section>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, onMounted } from "vue";
+const card = ref();
+const itemref = ref([]);
+const navItems = ref([
+	{ name: "houses", subgroup: ["1", "2", "3"] },
+	{ name: "activities", subgroup: ["a", "b", "c"] },
+	{ name: "location" },
+]);
+onMounted(() => {
+	console.log(card);
+	console.log(itemref);
+});
+</script>
 
 <style lang="css" scoped>
 .intro {

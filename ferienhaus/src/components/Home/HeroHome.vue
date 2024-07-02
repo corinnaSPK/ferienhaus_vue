@@ -46,9 +46,24 @@
 	</header>
 </template>
 
+<!-- <template>
+	<div class="hero smol-stack-layout">
+		<div class="box-left">
+			<div class="main-head">
+				<h1>einfach <br />urlaub</h1>
+			</div>
+			<div class="intro-main"><p>Lorem ipsum dolor sit amet.</p></div>
+		</div>
+		<div class="box-right smol-stack-layout">
+			<img src="../../assets/img/duenen_1.jpg" alt="" />
+			<div class="overlay"></div>
+		</div>
+	</div>
+</template> -->
 <script setup></script>
 
 <style lang="css" scoped>
+
 .hero {
 	padding: 0;
 }
@@ -65,7 +80,7 @@
 			rgba(255, 255, 255, 0.5),
 			rgba(255, 255, 255, 0.5)
 		),
-		url(../../../public/img/duenen_1.jpg);
+		url(../../assets/img/duenen_1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom;

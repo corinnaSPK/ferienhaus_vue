@@ -15,7 +15,7 @@
 	--cl-dark-accent-opa: rgba(13, 13, 47, 0.55);
 	--cl-dark-hover: rgb(16, 16, 51);
 	--cl-dark-hover: #080821;
-
+	--cl-bg-nav: hsl(240, 755%, 7%);
 	--cl-text-grey: #282828;
 	/* !fosizes #################################### */
 
@@ -31,6 +31,7 @@
 /* !utilities sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss*/
 
 /* !colors */
+
 .cl-background-dark-accent {
 	background-color: var(--cl-dark-accent);
 }
@@ -150,6 +151,9 @@
 	text-align: left;
 }
 
+.space-1 {
+	letter-spacing: 1px;
+}
 .space-3 {
 	letter-spacing: 3px;
 }
