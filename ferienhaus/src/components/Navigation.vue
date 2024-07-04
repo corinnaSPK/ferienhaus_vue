@@ -1,9 +1,8 @@
 <template>
-	<!-- <div class="nav cl-background-dark-accent">navigation</div> -->
 	<div class="nav dflexrow">
 		<div class="menu">
 			<button
-				class="nav-link dropdown-btn"
+				class="nav-link dropdown-btn mi-2rem"
 				aria-haspopup="true"
 				:aria-expanded="showMenu"
 				aria-label="browse"
@@ -46,14 +45,14 @@
 				</ul>
 			</div>
 		</div>
-
-		<button>buchen</button>
+		<Logo></Logo>
+		<button class="mi-2rem">buchen</button>
 	</div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-
+import Logo from "@/components/Logo.vue";
 const showMenu = ref(false);
 
 const showSub = ref(false);
@@ -63,9 +62,6 @@ const toggleNav = (e) => {
 
 const toggleSub = () => {
 	showSub.value = !showSub.value;
-
-	console.log("togglesub");
-	console.log(showSub.value);
 };
 </script>
 
@@ -77,6 +73,7 @@ const toggleSub = () => {
 	position: fixed;
 	height: 50px;
 	background-color: var(--cl-bg-nav);
+
 	justify-content: space-between;
 }
 .nav > * {

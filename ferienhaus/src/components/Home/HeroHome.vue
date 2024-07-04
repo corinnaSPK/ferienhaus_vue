@@ -3,7 +3,7 @@
 		<div class="hero__box dgridcenter p-3">
 			<div class="hero__box_text dgridcenter">
 				<h1 class="fs-head-main ff-sansserif uppercase space-3 mb-5em">
-					Einfach Urlaub
+					Der besondere Urlaub
 				</h1>
 				<p class="fs-copy mb-1em">
 					Genießen Sie die schönste Zeit des Jahres in unseren exklusiven
@@ -46,24 +46,9 @@
 	</header>
 </template>
 
-<!-- <template>
-	<div class="hero smol-stack-layout">
-		<div class="box-left">
-			<div class="main-head">
-				<h1>einfach <br />urlaub</h1>
-			</div>
-			<div class="intro-main"><p>Lorem ipsum dolor sit amet.</p></div>
-		</div>
-		<div class="box-right smol-stack-layout">
-			<img src="../../assets/img/duenen_1.jpg" alt="" />
-			<div class="overlay"></div>
-		</div>
-	</div>
-</template> -->
 <script setup></script>
 
 <style lang="css" scoped>
-
 .hero {
 	padding: 0;
 }

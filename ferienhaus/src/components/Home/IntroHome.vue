@@ -54,31 +54,10 @@
 				</li>
 			</ul>
 		</div>
-		<div class="test">
-			<div class="card" v-for="item in navItems" ref="card">
-				<p ref="itemref">{{ item.name }}</p>
-				<p v-for="(subitem, index) in item.subgroup">
-					<button>{{ subitem }}</button>
-				</p>
-			</div>
-		</div>
 	</section>
 </template>
 
-<script setup>
-import { ref, onMounted } from "vue";
-const card = ref();
-const itemref = ref([]);
-const navItems = ref([
-	{ name: "houses", subgroup: ["1", "2", "3"] },
-	{ name: "activities", subgroup: ["a", "b", "c"] },
-	{ name: "location" },
-]);
-onMounted(() => {
-	console.log(card);
-	console.log(itemref);
-});
-</script>
+<script setup></script>
 
 <style lang="css" scoped>
 .intro {
