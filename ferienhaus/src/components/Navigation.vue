@@ -26,9 +26,12 @@
 						</button>
 						<div class="submenu" :class="{ active: showSub }">
 							<ul>
-								<li>sub goes here</li>
-								<li>sub goes here</li>
-								<li>sub goes here</li>
+								<RouterLink
+									v-for="house in houses"
+									to="/house/house.to"
+									:key="`house-${house.id}`"
+									>{{ house.name }}</RouterLink
+								>
 							</ul>
 						</div>
 					</li>
@@ -45,23 +48,47 @@
 				</ul>
 			</div>
 		</div>
-		<Logo></Logo>
+		<RouterLink class="uppercase logo cl-text-light" to="/">
+			<span>der</span>bes<br />ondere<br /><span>urlaub</span>
+		</RouterLink>
 		<button class="mi-2rem">buchen</button>
 	</div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import Logo from "@/components/Logo.vue";
-const showMenu = ref(false);
+import { useRouter, RouterLink } from "vue-router";
 
+// toggle menu and sub vars
+const showMenu = ref(false);
 const showSub = ref(false);
+
+// routing vars
+
+const router = useRouter();
+import housesData from "../data/houses.json";
+const houses = ref(housesData);
+
+console.log(houses.value);
+// toggle menu and sub foos
+
 const toggleNav = (e) => {
 	showMenu.value = !showMenu.value;
 };
 
 const toggleSub = () => {
 	showSub.value = !showSub.value;
+};
+
+// routing
+
+const navigateToHouse = () => {
+	router.push(`/house/${house.id}`);
+	console.log("navigate");
+};
+
+const navigateToQuiz = () => {
+	router.push(`/quiz/${quiz.id}`);
 };
 </script>
 

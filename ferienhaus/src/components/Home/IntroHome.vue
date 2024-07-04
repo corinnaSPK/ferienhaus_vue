@@ -83,13 +83,6 @@
 	z-index: -5;
 }
 
-.flexwrap {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 1rem;
-}
-
 .flexwrap > * {
 	flex: 0 1 clamp(100px, 20%, 300px);
 

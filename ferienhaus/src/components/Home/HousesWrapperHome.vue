@@ -30,7 +30,6 @@ import { usefadeInLeftChildren } from "@/composables/fadeInLeftChildren.js";
 
 onMounted(() => {
 	usefadeInLeftChildren(houseWrapper.value);
-	console.log(card.value);
 });
 </script>
 
