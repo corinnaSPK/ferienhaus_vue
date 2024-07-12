@@ -3,6 +3,7 @@
 		<div class="title mb-5em">
 			<button class="fs-copy" @click="togglePanel" :aria-expanded="panelOpen">
 				<slot name="title" />
+				<span :class="{ spanopen: panelOpen }" aria-hidden="true"> </span>
 			</button>
 		</div>
 		<div class="content" :class="{ open: panelOpen }">
@@ -26,9 +27,7 @@ button {
 	color: inherit;
 	text-align: left;
 }
-button span {
-	background-color: red;
-}
+
 .content.open {
 	display: block;
 }
@@ -39,5 +38,24 @@ button span {
 .title {
 	display: flex;
 	justify-content: space-between;
+}
+
+span {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	aspect-ratio: 1;
+	border-right: 1px solid var(--cl-light);
+	border-bottom: 1px solid var(--cl-light);
+	margin-left: 1rem;
+	rotate: 45deg;
+
+	transform: translateY(-50%);
+	transition: all 1s ease;
+}
+.spanopen {
+	rotate: 225deg;
+	translate: 1rem -50%;
+	transition: all 1s ease;
 }
 </style>

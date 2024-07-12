@@ -1,28 +1,95 @@
 <template>
-	<div class="dgridcenter house-wrapper text-center" ref="houseWrapper">
+	<div class="dgridcenter house_wrapper text-center" ref="houseWrapper">
 		<div
 			v-for="house in houses"
 			:key="`house-${house.id}`"
-			class="house-card"
+			class="house_card"
 			ref="card"
 		>
 			<img :src="`../../../public/img/${house.imgmain}`" alt="" />
 			<div class="card-main p-3">
 				<h3 class="fs-head-3 space-1">{{ house.name }}</h3>
-				<p class="fs-copy">{{ house.copyshort }}</p>
-				<p class="fs-copy">{{ house.pers }} Personen</p>
-				<p class="fs-copy">{{ house.sz }} SZ</p>
-				<p class="fs-copy">{{ house.groeße }} m&sup2;</p>
+				<p class="fs-copy mb-3rem">
+					{{ house.copyshort }}
+				</p>
+				<ul class="fs-copy mb-3rem">
+					<li>
+						<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg>
+						{{ house.pers }} Personen
+					</li>
+					<li>
+						<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg>
+						{{ house.sz }} SZ
+					</li>
+					<li>
+						<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg>
+						{{ house.groeße }} m&sup2;
+					</li>
+				</ul>
+				<!-- <RouterLink
+					:to="`/house/${house.path}`"
+					class="fs-copy uppercase cl-text-dark-accent mt-10rem"
+				>
+					Mehr erfahren
+				</RouterLink> -->
 
-				<button class="fs-copy uppercase">Mehr erfahren</button>
+				<button
+					class="fs-copy uppercase cl-text-dark-accent"
+					@click="
+						() => {
+							router.push(`/house/${house.path}`);
+							console.log(house.path);
+						}
+					"
+				>
+					Mehr erfahren
+				</button>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
+import { useRouter, RouterLink } from "vue-router";
+
 import { ref, onMounted } from "vue";
+
 import housesData from "../../data/houses.json";
+
+const router = useRouter();
 const houseWrapper = ref(null);
 const houses = ref(housesData);
 const card = ref([]);
@@ -34,22 +101,35 @@ onMounted(() => {
 </script>
 
 <style lang="css" scoped>
-.house-wrapper {
-	gap: 3rem;
+.house_wrapper {
+	gap: 6rem;
 }
-.house-card {
-	margin: auto;
+.house_card {
+	margin-inline: auto;
 	width: clamp(250px, 80%, 800px);
 }
 
-.house-card img {
+.house_card img {
 	max-width: 300px;
-	max-height: 300px;
+	/* max-height: 300px; */
 	aspect-ratio: 1;
 	margin: auto;
 }
+svg {
+	fill: white;
+}
 button {
 	padding: 1em 2em;
+	border: none;
+	transition: all ease 0.3s;
+	background-color: var(--cl-light);
+}
+button:hover,
+button:focus,
+button:focus-visible {
+	cursor: pointer;
+	background-color: rgba(219, 219, 248, 0.87);
+	transition: all ease 0.3s;
 }
 
 h3::after {
@@ -64,11 +144,11 @@ h3::after {
 }
 
 @media screen and (min-width: 700px) {
-	.house-card:nth-child(even) {
+	.house_card:nth-child(even) {
 		display: flex;
 		flex-direction: row;
 	}
-	.house-card:nth-child(odd) {
+	.house_card:nth-child(odd) {
 		display: flex;
 		flex-direction: row-reverse;
 	}

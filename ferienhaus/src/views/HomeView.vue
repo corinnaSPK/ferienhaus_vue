@@ -25,8 +25,8 @@ import FAQ from "@/components/Home/FAQ.vue";
 		<IntroHome></IntroHome>
 		<ZitatHome></ZitatHome>
 		<HousesOverviewHome></HousesOverviewHome>
-		<FAQ></FAQ>
 		<TestisHome></TestisHome>
+		<FAQ></FAQ>
 	</main>
 </template>
 

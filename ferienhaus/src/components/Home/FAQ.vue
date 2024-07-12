@@ -11,29 +11,29 @@
 			</div>
 			<div class="faq__wrapper fs-copy">
 				<AccPanel>
-					<template v-slot:title>Gibt es Internet? <span></span></template>
+					<template v-slot:title>Gibt es Internet? </template>
 					<template v-slot:content
 						>Something small enough to escape casual notice.</template
 					>
 				</AccPanel>
 				<AccPanel>
 					<template v-slot:title
-						>Muss ich eigene Bettwäsche mitbringen?<span></span
-					></template>
+						>Muss ich eigene Bettwäsche mitbringen</template
+					>
 					<template v-slot:content
 						>Something small enough to escape casual notice.</template
 					>
 				</AccPanel>
 				<AccPanel>
-					<template v-slot:title>Was kostet die Sauna?<span></span></template>
+					<template v-slot:title>Was kostet die Sauna?</template>
 					<template v-slot:content
 						>Something small enough to escape casual notice.</template
 					>
 				</AccPanel>
 				<AccPanel>
 					<template v-slot:title
-						>Wo kriege ich Holz für den Kamin her? <span></span
-					></template>
+						>Wo kriege ich Holz für den Kamin her?
+					</template>
 					<template v-slot:content
 						>Something small enough to escape casual notice.</template
 					>
@@ -45,12 +45,14 @@
 
 <script setup>
 import AccPanel from "../AccPanel.vue";
+const { panelOpen } = defineProps(["panelOpen"]);
 </script>
 
 <style lang="css" scoped>
-.active {
-	border: 5px solid red;
+.fag {
+	padding-top: 0;
 }
+
 .accordion__content {
 	width: clamp(90%, 70vw, 700px);
 	display: flex;
@@ -76,18 +78,5 @@ import AccPanel from "../AccPanel.vue";
 	.accordion__content > * {
 		width: 50%;
 	}
-}
-span {
-	display: inline-block;
-	width: 1rem;
-	height: 1rem;
-	aspect-ratio: 1;
-	border-right: 1px solid var(--cl-light);
-	border-bottom: 1px solid var(--cl-light);
-	margin-left: 1rem;
-	rotate: 45deg;
-
-	transform: translateY(-50%);
-	transition: all 1s ease;
 }
 </style>

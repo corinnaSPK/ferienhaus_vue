@@ -10,4 +10,17 @@ import HousesIntroHome from "@/components/Home/HousesIntroHome.vue";
 import HousesWrapperHome from "@/components/Home/HousesWrapperHome.vue";
 </script>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+/* .houses {
+}
+.houses::after {
+	display: block;
+
+	content: "";
+	width: 70vw;
+	height: 1px;
+	margin-top: 10rem;
+	margin-inline: auto;
+	background-color: white;
+} */
+</style>
