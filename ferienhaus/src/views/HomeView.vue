@@ -5,6 +5,7 @@ import HousesOverviewHome from "@/components/Home/HousesOverviewHome.vue";
 import TestisHome from "@/components/Home/TestisHome.vue";
 import AccPanel from "@/components/AccPanel.vue";
 import ZitatHome from "@/components/Home/ZItatHome.vue";
+import FAQ from "@/components/Home/FAQ.vue";
 </script>
 
 <template>
@@ -24,6 +25,7 @@ import ZitatHome from "@/components/Home/ZItatHome.vue";
 		<IntroHome></IntroHome>
 		<ZitatHome></ZitatHome>
 		<HousesOverviewHome></HousesOverviewHome>
+		<FAQ></FAQ>
 		<TestisHome></TestisHome>
 	</main>
 </template>

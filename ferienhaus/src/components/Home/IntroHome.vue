@@ -1,6 +1,6 @@
 <template>
 	<section class="intro dgridcenter p-3-in mb1" id="about">
-		<div class="text__box mb-5rem">
+		<div class="text__box mb-5rem width-copy">
 			<h2 class="intro__box-head fs-head-2 fw-lighter mb-5em">
 				Urlaubsreif? Hier beginnt Ihr Traumurlaub!
 			</h2>
@@ -65,7 +65,6 @@
 }
 
 .text__box {
-	max-width: clamp(300px, 60%, 700px);
 	margin: 0 auto 5rem;
 }
 

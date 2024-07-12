@@ -28,9 +28,11 @@
 							<ul>
 								<RouterLink
 									v-for="house in houses"
-									to="/house/house.to"
+									:to="`/house/${house.path}`"
 									:key="`house-${house.id}`"
-									>{{ house.name }}</RouterLink
+									>{{ house.name }}
+
+									{{ house.path }}</RouterLink
 								>
 							</ul>
 						</div>
@@ -48,9 +50,9 @@
 				</ul>
 			</div>
 		</div>
-		<RouterLink class="uppercase logo cl-text-light" to="/">
+		<button class="uppercase logo cl-text-light" @click="goHome">
 			<span>der</span>bes<br />ondere<br /><span>urlaub</span>
-		</RouterLink>
+		</button>
 		<button class="mi-2rem">buchen</button>
 	</div>
 </template>
@@ -59,6 +61,9 @@
 import { ref } from "vue";
 import { useRouter, RouterLink } from "vue-router";
 
+const goHome = () => {
+	router.push("/");
+};
 // toggle menu and sub vars
 const showMenu = ref(false);
 const showSub = ref(false);
@@ -69,7 +74,7 @@ const router = useRouter();
 import housesData from "../data/houses.json";
 const houses = ref(housesData);
 
-console.log(houses.value);
+// console.log(houses.value);
 // toggle menu and sub foos
 
 const toggleNav = (e) => {
@@ -82,13 +87,10 @@ const toggleSub = () => {
 
 // routing
 
+// 									:to="`house/${house.path}`"
 const navigateToHouse = () => {
-	router.push(`/house/${house.id}`);
-	console.log("navigate");
-};
-
-const navigateToQuiz = () => {
-	router.push(`/quiz/${quiz.id}`);
+	// router.push(`/house/${house.id}`);
+	console.log(`${route.params.id}`);
 };
 </script>
 
@@ -98,7 +100,7 @@ const navigateToQuiz = () => {
 	width: 100%;
 	backdrop-filter: blur(10px);
 	position: fixed;
-	height: 50px;
+	/* height: 50px; */
 	background-color: var(--cl-bg-nav);
 
 	justify-content: space-between;
@@ -168,5 +170,25 @@ const navigateToQuiz = () => {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.666);
 	width: clamp(250px, 50%, 90%);
 	padding-bottom: 0.3em;
+}
+
+/* Logo  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.logo {
+	padding: 5px;
+	font-size: clamp(1rem, 1.2rem, 1.4rem);
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: 0;
+	margin-block: 0.5rem;
+}
+.logo span {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.logo:hover,
+.logo:focus,
+.logo:focus-visible {
+	border: 1px solid white;
+	cursor: pointer;
 }
 </style>

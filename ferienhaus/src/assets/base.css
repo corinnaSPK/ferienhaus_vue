@@ -191,6 +191,10 @@
 .mcenter {
 	margin-inline: auto;
 }
+
+.width-copy {
+	max-width: clamp(300px, 60%, 700px);
+}
 /*! borders tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt */
 .bbottom {
 	border-bottom: 1px solid var(--cl-light-opa);

@@ -3,7 +3,8 @@
 		<div class="hero__box dgridcenter p-3">
 			<div class="hero__box_text dgridcenter">
 				<h1 class="fs-head-main ff-sansserif uppercase space-3 mb-5em">
-					Der besondere Urlaub
+					Der <br />besondere <br />
+					Urlaub
 				</h1>
 				<p class="fs-copy mb-1em">
 					Genießen Sie die schönste Zeit des Jahres in unseren exklusiven
@@ -72,8 +73,11 @@
 }
 
 .hero__box_text {
-	margin-left: 1rem;
+	padding: 2rem;
 	color: var(--cl-dark-accent-opa);
+	background-color: rgba(255, 255, 255, 0.8);
+	border-bottom: 1px solid var(--cl-dark-accent);
+	border-left: 1px solid var(--cl-dark-accent);
 }
 .hero__box_text h1 {
 	line-height: 1.2;
@@ -82,7 +86,7 @@
 .hero__box_text h1::after {
 	content: "";
 	display: block;
-	width: 100%;
+	width: 50%;
 	height: 1px;
 	background-color: var(--cl-dark-accent);
 	margin-top: 10px;
