@@ -76,8 +76,7 @@
 	padding: 2rem;
 	color: var(--cl-dark-accent-opa);
 	background-color: rgba(255, 255, 255, 0.8);
-	border-bottom: 1px solid var(--cl-dark-accent);
-	border-left: 1px solid var(--cl-dark-accent);
+	border: 1px solid white;
 }
 .hero__box_text h1 {
 	line-height: 1.2;

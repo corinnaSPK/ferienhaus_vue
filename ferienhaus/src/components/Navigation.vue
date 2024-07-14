@@ -104,6 +104,7 @@ const navigateToHouse = () => {
 	background-color: var(--cl-bg-nav);
 
 	justify-content: space-between;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 .nav > * {
 	margin-block: auto;

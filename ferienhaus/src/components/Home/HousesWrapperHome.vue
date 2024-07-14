@@ -1,11 +1,6 @@
 <template>
 	<div class="dgridcenter house_wrapper text-center" ref="houseWrapper">
-		<div
-			v-for="house in houses"
-			:key="`house-${house.id}`"
-			class="house_card"
-			ref="card"
-		>
+		<div v-for="house in houses" :key="`house-${house.id}`" class="house_card">
 			<img :src="`../../../public/img/${house.imgmain}`" alt="" />
 			<div class="card-main p-3">
 				<h3 class="fs-head-3 space-1">{{ house.name }}</h3>
@@ -71,7 +66,6 @@
 					@click="
 						() => {
 							router.push(`/house/${house.path}`);
-							console.log(house.path);
 						}
 					"
 				>
