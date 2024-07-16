@@ -19,7 +19,7 @@ const { house } = defineProps(["house"]);
 .house_hero {
 	display: grid;
 	grid-template-areas: "hero";
-	max-width: 900px;
+	max-width: 700px;
 	/* width: clamp(200px, 600px, 900px); */
 	/* border: 1px solid white; */
 	margin-right: 20px;

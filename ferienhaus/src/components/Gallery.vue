@@ -5,17 +5,22 @@
 				<li v-for="(img, index) in images" :key="img">
 					<button @click="openLightbox">
 						<img :src="`../src/assets/img/${img}`" alt="" :id="index" />
-						<!-- <img :src="`../src/assets/img/${images[0]}`" alt="" /> -->
 					</button>
 				</li>
 			</ul>
-
+			<Modal :modalOpen="modalOpen" @close="closeLightbox">
+				<div class="current_image mcenter">
+					<img :src="`../src/assets/img/${images[currentImageIndex]}`" alt="" />
+					<div class="buttons_wrapper">
+						<button @click="prev">&larr;</button>
+						<button @click="next">&rarr;</button>
+					</div>
+				</div>
+			</Modal>
+			<!-- 
 			<div class="modal" v-show="modalOpen">
 				<button class="btn--close-modal" @click="closeLightbox">&times;</button>
 				<div class="current_image mcenter">
-					<!-- <img :src="`${currentImage}`" alt="" /> -->
-
-					<!-- Das mhier geht  -->
 					<img :src="`../src/assets/img/${images[currentImageIndex]}`" alt="" />
 					<div class="buttons_wrapper">
 						<button @click="prev">&larr;</button>
@@ -23,13 +28,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="overlay" v-show="modalOpen"></div>
-		</div>
+			 --></div>
 	</section>
 </template>
 
 <script setup>
-import { nextTick, ref } from "vue";
+import Modal from "../components/Modal.vue";
+import { ref } from "vue";
 const { house } = defineProps(["house"]);
 // momentan loopen wir durch ein array mit einfachen strings ["abc", "def", "etc"]; wir müssern aber statt der e3infachen strings ein objekt loopen, das muss im code noch angepasst werden
 const images = house.imgintro;
@@ -40,12 +45,9 @@ const currentImage = ref(null);
 const currentImageIndex = ref(null);
 const openLightbox = (e) => {
 	modalOpen.value = true;
-	console.log(e.target);
 	currentImage.value = e.target.src;
-	// console.log(currentImage.value);
 	currentImageIndex.value = e.target.id;
 	currentImageIndex.value = parseInt(currentImageIndex.value);
-	// console.log(currentImageIndex.value);
 };
 
 const closeLightbox = () => {
@@ -89,40 +91,6 @@ button {
 	width: 100%;
 	aspect-ratio: 1;
 	object-fit: cover;
-}
-.modal {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 90vw;
-	height: 90vh;
-	background-color: var(--cl-light);
-	color: var(--cl-dark-accent);
-	padding: 5rem;
-	z-index: 1000;
-	overflow: hidden;
-}
-
-.overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	backdrop-filter: blur(4px);
-	z-index: 100;
-}
-
-.btn--close-modal {
-	font-family: inherit;
-	color: inherit;
-	position: absolute;
-	top: 0.5rem;
-	right: 2rem;
-	font-size: 3rem;
-	border: none;
-	background: none;
 }
 
 .current_image {

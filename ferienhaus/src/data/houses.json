@@ -23,7 +23,7 @@
     
     
     {"id":3, "name":"Küstentraum", 
-    "path": "bernstein", 
+    "path": "kuestentraum", 
     "street": "Günter-Remien-Ring", "nr":12 , 
     "plz": 213243,"ort":"Schönhagen", 
     "groeße":23, "sz":1, "pers":4, 
@@ -34,7 +34,7 @@
     
     
     {"id":4, "name":"Strandglück", 
-    "path": "moewe", 
+    "path": "strandglueck", 
     "street": "Günter-Remien-Ring", "nr":12 , 
     "plz": 213243,"ort":"Schönhagen", 
     "groeße":23, "sz":1, "pers":4, 
