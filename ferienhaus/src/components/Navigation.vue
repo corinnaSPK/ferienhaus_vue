@@ -31,9 +31,7 @@
 									:to="`/house/${house.path}`"
 									:key="`house-${house.id}`"
 									>{{ house.name }}
-
-									{{ house.path }}</RouterLink
-								>
+								</RouterLink>
 							</ul>
 						</div>
 					</li>

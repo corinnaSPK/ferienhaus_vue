@@ -62,10 +62,24 @@
 <style lang="css" scoped>
 .intro {
 	padding-bottom: 0;
+	overflow: hidden;
 }
 
 .text__box {
 	margin: 0 auto 5rem;
+	position: relative;
+	z-index: 1;
+}
+
+.text__box::after {
+	content: "";
+	position: absolute;
+	width: 110%;
+	height: 110%;
+	background-color: var(--cl-bg-nav);
+	top: -10px;
+	right: -100px;
+	z-index: -1;
 }
 
 .photo__box {

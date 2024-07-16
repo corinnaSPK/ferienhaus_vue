@@ -125,7 +125,6 @@ button:hover,
 button:focus,
 button:focus-visible {
 	cursor: pointer;
-	/* background-color: rgba(219, 219, 248, 0.87); */
 	background-color: transparent;
 	color: white;
 	border: 1px solid var(--cl-light-opa);

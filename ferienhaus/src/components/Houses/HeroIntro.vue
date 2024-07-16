@@ -8,7 +8,6 @@
 		</div>
 		<ul class="intro_imgs flexwrap">
 			<li v-for="img in house.imgintro">
-				<!-- <img :src="`../src/assets/img/${img}`" alt="" srcset="" /> -->
 				<img :src="getImageUrl(img)" alt="" srcset="" />
 			</li>
 		</ul>

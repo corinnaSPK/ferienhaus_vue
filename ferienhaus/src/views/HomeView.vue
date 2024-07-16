@@ -21,7 +21,6 @@ import FAQ from "@/components/Home/FAQ.vue";
 			<li>vuetify und prime deinstallieren</li>
 		</ul>
 		<HeroHome></HeroHome>
-		<div class="main_wrapper"><AccPanel></AccPanel></div>
 		<IntroHome></IntroHome>
 		<ZitatHome></ZitatHome>
 		<HousesOverviewHome></HousesOverviewHome>

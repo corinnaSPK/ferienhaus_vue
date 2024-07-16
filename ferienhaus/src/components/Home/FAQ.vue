@@ -49,8 +49,13 @@ const { panelOpen } = defineProps(["panelOpen"]);
 </script>
 
 <style lang="css" scoped>
-.fag {
-	padding-top: 0;
+.faq {
+	/* padding-top: 0; */
+	background-image: linear-gradient(
+		to bottom,
+		var(--cl-dark-accent),
+		var(--cl-bg-nav)
+	);
 }
 
 .accordion__content {
