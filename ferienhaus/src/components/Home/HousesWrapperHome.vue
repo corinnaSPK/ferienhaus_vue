@@ -1,7 +1,7 @@
 <template>
 	<div class="dgridcenter house_wrapper text-center" ref="houseWrapper">
 		<div v-for="house in houses" :key="`house-${house.id}`" class="house_card">
-			<img :src="`../../../public/img/${house.imgmain}`" alt="" />
+			<img :src="getImageUrl(house.imgmain)" alt="" />
 			<div class="card-main p-3">
 				<h3 class="fs-head-3 space-1">{{ house.name }}</h3>
 				<p class="fs-copy mb-3rem">
@@ -69,7 +69,7 @@
 						}
 					"
 				>
-					Mehr erfahren
+					Entdecken
 				</button>
 			</div>
 		</div>
@@ -86,7 +86,10 @@ import housesData from "../../data/houses.json";
 const router = useRouter();
 const houseWrapper = ref(null);
 const houses = ref(housesData);
-const card = ref([]);
+
+const getImageUrl = (path) => {
+	return new URL(`../../assets/img/${path}`, import.meta.url).href;
+};
 import { usefadeInLeftChildren } from "@/composables/fadeInLeftChildren.js";
 
 onMounted(() => {
@@ -114,16 +117,19 @@ svg {
 }
 button {
 	padding: 1em 2em;
-	border: none;
-	transition: all ease 0.3s;
+	border: 1px solid transparent;
+	transition: all ease 0.5s;
 	background-color: var(--cl-light);
 }
 button:hover,
 button:focus,
 button:focus-visible {
 	cursor: pointer;
-	background-color: rgba(219, 219, 248, 0.87);
-	transition: all ease 0.3s;
+	/* background-color: rgba(219, 219, 248, 0.87); */
+	background-color: transparent;
+	color: white;
+	border: 1px solid var(--cl-light-opa);
+	transition: all ease 0.5s;
 }
 
 h3::after {

@@ -8,7 +8,8 @@
 		</div>
 		<ul class="intro_imgs flexwrap">
 			<li v-for="img in house.imgintro">
-				<img :src="`../src/assets/img/${img}`" alt="" srcset="" />
+				<!-- <img :src="`../src/assets/img/${img}`" alt="" srcset="" /> -->
+				<img :src="getImageUrl(img)" alt="" srcset="" />
 			</li>
 		</ul>
 	</div>
@@ -16,6 +17,9 @@
 
 <script setup>
 const { house } = defineProps(["house"]);
+const getImageUrl = (path) => {
+	return new URL(`../../assets/img/${path}`, import.meta.url).href;
+};
 </script>
 
 <style lang="css" scoped>

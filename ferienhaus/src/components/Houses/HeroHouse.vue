@@ -1,7 +1,8 @@
 <template>
 	<div class="house_hero">
 		<div class="right">
-			<img :src="`../src/assets/img/${house.imgmain}`" alt="" srcset="" />
+			<!-- <img :src="`../src/assets/img/${house.imgmain}`" alt="" srcset="" /> -->
+			<img :src="getImageUrl(house.imgmain)" alt="" srcset="" />
 		</div>
 		<div class="left dgridcenter cl-text-dark-accent fs-head-main p-3">
 			<h1 class="head_hero fs-head-main ff-sansserif uppercase space-3">
@@ -13,6 +14,9 @@
 
 <script setup>
 const { house } = defineProps(["house"]);
+const getImageUrl = (path) => {
+	return new URL(`../../assets/img/${path}`, import.meta.url).href;
+};
 </script>
 
 <style lang="css" scoped>

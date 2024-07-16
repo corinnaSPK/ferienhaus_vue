@@ -2,9 +2,7 @@
 	<div>
 		<HeroHouse :house="house" :key="componentKey"></HeroHouse>
 		<HeroIntro :house="house" :key="$route.path"></HeroIntro>
-		<Gallery :house="house" :key="$route.params.path"
-			><template>gies here</template></Gallery
-		>
+		<Gallery :house="house" :key="$route.params.path"></Gallery>
 	</div>
 	<!-- <ul class="p-3">
 			<li>gallery</li>
@@ -12,7 +10,6 @@
 			<li>testi</li>
 			<li>verfügbarkeit</li>
 	</ul> -->
-	<!-- <Carousel></Carousel> -->
 </template>
 
 <script setup>

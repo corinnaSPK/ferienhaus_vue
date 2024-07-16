@@ -41,6 +41,7 @@ const closeLightbox = () => {
 	padding: 5rem;
 	z-index: 1000;
 	overflow: hidden;
+	display: flex;
 }
 
 .overlay {

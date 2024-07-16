@@ -4,13 +4,15 @@
 			<ul class="thumbnail flexwrap">
 				<li v-for="(img, index) in images" :key="img">
 					<button @click="openLightbox">
-						<img :src="`../src/assets/img/${img}`" alt="" :id="index" />
+						<!-- <img :src="`../src/assets/img/${img}`" alt="" :id="index" /> -->
+						<img :src="getImageUrl(img)" alt="" :id="index" />
 					</button>
 				</li>
 			</ul>
 			<Modal :modalOpen="modalOpen" @close="closeLightbox">
 				<div class="current_image mcenter">
-					<img :src="`../src/assets/img/${images[currentImageIndex]}`" alt="" />
+					<!-- <img :src="`../src/assets/img/${images[currentImageIndex]}`" alt="" /> -->
+					<img :src="getImageUrl(images[currentImageIndex])" alt="" />
 					<div class="buttons_wrapper">
 						<button @click="prev">&larr;</button>
 						<button @click="next">&rarr;</button>
@@ -39,6 +41,9 @@ const { house } = defineProps(["house"]);
 // momentan loopen wir durch ein array mit einfachen strings ["abc", "def", "etc"]; wir müssern aber statt der e3infachen strings ein objekt loopen, das muss im code noch angepasst werden
 const images = house.imgintro;
 
+const getImageUrl = (path) => {
+	return new URL(`../assets/img/${path}`, import.meta.url).href;
+};
 const modalOpen = ref(false);
 
 const currentImage = ref(null);
@@ -55,10 +60,12 @@ const closeLightbox = () => {
 };
 
 const prev = () => {
-	if (currentImageIndex.value === 0) currentImageIndex.value = images.length;
+	if (currentImageIndex.value === 0)
+		currentImageIndex.value = images.length - 1;
 	else {
 		currentImageIndex.value = currentImageIndex.value - 1;
 	}
+	console.log(currentImageIndex.value);
 };
 
 const next = () => {
@@ -84,8 +91,6 @@ button {
 }
 .thumbnail li {
 	flex: 0 1 clamp(100px, 20%, 300px);
-
-	border: 3px solid red;
 }
 .thumbnail img {
 	width: 100%;
@@ -95,10 +100,9 @@ button {
 
 .current_image {
 	width: 100%;
-	height: 100%;
-
+	max-height: 100%;
 	display: grid;
-	align-items: center;
+	place-content: center;
 	grid-template-areas: "stack";
 	overflow: hidden;
 }
@@ -108,14 +112,15 @@ button {
 }
 
 .current_image > img {
-	max-height: 100%;
-	max-width: 100%;
+	/* max-height: 100%; */
+	/* max-width: 100%; */
 	object-fit: cover;
 	object-position: center;
 }
 
 .buttons_wrapper {
 	height: 50px;
+	align-self: center;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
