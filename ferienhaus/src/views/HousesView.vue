@@ -18,7 +18,7 @@ import HeroHouse from "../components/Houses/HeroHouse.vue";
 import HeroIntro from "../components/Houses/HeroIntro.vue";
 import Gallery from "../components/Gallery.vue";
 
-import { ref, watch, onMounted, onBeforeMount } from "vue";
+import { ref, watch, onMounted, onBeforeMount, computed } from "vue";
 import { useRoute } from "vue-router";
 import housesData from "../data/houses.json";
 const route = useRoute();
@@ -28,7 +28,6 @@ const housePath = ref(route.params.path);
 
 const housename = houses.value.find((house) => house.path === housePath.value);
 const house = ref(null);
-
 onBeforeMount(() => (house.value = housename));
 watch(
 	() => route.params.path,

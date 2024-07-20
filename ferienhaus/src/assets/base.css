@@ -240,6 +240,8 @@ section {
 	padding: 150px 0;
 }
 
+/* !toggle span accordioon or menu 
+
 /* !default styles from vue color palette from <https://github.com/vuejs/theme>
 :root {
   --vt-c-white: #ffffff;

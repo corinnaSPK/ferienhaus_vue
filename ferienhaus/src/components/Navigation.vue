@@ -1,7 +1,7 @@
 <template>
 	<div class="nav dflexrow">
 		<div class="menu">
-			<button
+			<!-- 	<button
 				class="nav-link dropdown-btn mi-2rem"
 				aria-haspopup="true"
 				:aria-expanded="showMenu"
@@ -9,8 +9,23 @@
 				@click="toggleNav"
 			>
 				Menu
+			</button> -->
+			<button
+				aria-controls="nav-main"
+				aria-haspopup="true"
+				:aria-expanded="showMenu"
+				aria-label="browse"
+				@click="toggleNav"
+				class="mobile-nav-toggle"
+				data-mobile-nav-toggle
+			>
+				<div class="menu-box open">
+					<span class="a" :class="{ close: showMenu }"></span>
+					<span class="b" :class="{ close: showMenu }"></span>
+					<span class="c" :class="{ close: showMenu }"></span>
+				</div>
 			</button>
-			<div class="dropdown" :class="{ active: showMenu }">
+			<div class="nav-main dropdown" :class="{ active: showMenu }">
 				<ul role="menu" class="dgridcenter">
 					<li role="menuitem">
 						<a class="dropdown-link" href="#adobe-xd"> Home </a>
@@ -21,8 +36,10 @@
 							:aria-expanded="showSub"
 							aria-label="browse"
 							@click="toggleSub"
+							class="nav-button"
 						>
-							UNterkünfte
+							Unterkünfte
+							<span :class="{ spanopen: showSub }"></span>
 						</button>
 						<div class="submenu" :class="{ active: showSub }">
 							<ul>
@@ -30,6 +47,7 @@
 									v-for="house in houses"
 									:to="`/house/${house.path}`"
 									:key="`house-${house.id}`"
+									class="sublink"
 									>{{ house.name }}
 								</RouterLink>
 							</ul>
@@ -112,11 +130,49 @@ const navigateToHouse = () => {
 	font-weight: 500;
 	padding: 0.3rem;
 }
-.menu li:hover {
-	color: teal;
+/* .menu div:not(.submenu) li:hover a:not(.sublink),
+.nav-button:hover {
 	border-bottom: 1.2px solid white;
+	display: block;
+}
+ */
+.submenu a {
+	border-bottom: 1px solid transparent;
+	width: fit-content;
+}
+/* .submenu a:hover {
+	border-bottom: 1px solid white;
+} */
+
+.menu a:hover,
+.nav-button:hover {
+	border-bottom: 1px solid white;
+}
+.nav-button {
+	font-size: inherit;
+	color: inherit;
+	background-color: transparent;
+	border: none;
+}
+.nav-button span {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	aspect-ratio: 1;
+	border-right: 1px solid var(--cl-light);
+	border-bottom: 1px solid var(--cl-light);
+	margin-left: 1rem;
+	rotate: 45deg;
+
+	transform: translateY(-50%);
+	transition: all 1s ease;
 }
 
+.nav-button .spanopen {
+	rotate: 225deg;
+	translate: 1rem -50%;
+	transition: all 1s ease;
+}
 .dropdown {
 	display: flex;
 	flex-direction: column;
@@ -166,9 +222,70 @@ const navigateToHouse = () => {
 }
 
 .dropdown ul li {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.666);
+	border-bottom: 1px solid transparent;
 	width: clamp(250px, 50%, 90%);
 	padding-bottom: 0.3em;
+}
+
+/* open button */
+
+.mobile-nav-toggle {
+	background-color: transparent;
+	border: none;
+}
+.menu-box {
+	width: 40px;
+	padding: 15px;
+	aspect-ratio: 1;
+	background-color: var(--cl-dark-accent);
+
+	position: relative;
+
+	margin: 10px;
+}
+.menu-box span {
+	width: 55%;
+	height: 1px;
+	border-radius: 5px;
+	background-color: #fff;
+	display: block;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	transition: all 0.5s ease;
+}
+.a {
+	top: 13px;
+}
+
+.b {
+	top: 20px;
+}
+
+.c {
+	top: 27px;
+}
+
+.close.a {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 50%) rotate(45deg);
+	transition: all 0.5s ease;
+}
+
+.close.b {
+	top: 20px;
+	transition: all 0.5s ease;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+
+.close.c {
+	top: 50%;
+	left: 50%;
+	transition: all 0.5s ease;
+	transform: translate(-50%, 50%) rotate(-45deg);
+	transition: all 0.5s ease;
 }
 
 /* Logo  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
