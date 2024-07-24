@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import HousesView from '../views/HousesView.vue'
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -17,11 +16,19 @@ const router = createRouter({
       component: () => import('../views/HousesView.vue')
 
     },
+   
  
   ], 
-  scrollBehavior (to, from, savedPosition) {
-  return { x: 0, y: 0 }
-}
+ scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      // This ensures that if hash is provided to router.push it works as expected.
+      //  & since we have used "behavior: 'smooth'" the browser will slowly come to this hash position.
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+  }
 
 })
 

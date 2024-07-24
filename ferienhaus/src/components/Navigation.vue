@@ -28,9 +28,6 @@
 			<div class="nav-main dropdown" :class="{ active: showMenu }">
 				<ul role="menu" class="dgridcenter">
 					<li role="menuitem">
-						<a class="dropdown-link" href="#adobe-xd"> Home </a>
-					</li>
-					<li role="menuitem">
 						<button
 							aria-haspopup="true"
 							:aria-expanded="showSub"
@@ -48,6 +45,7 @@
 									:to="`/house/${house.path}`"
 									:key="`house-${house.id}`"
 									class="sublink"
+									@click="() => (showMenu = false)"
 									>{{ house.name }}
 								</RouterLink>
 							</ul>
@@ -55,21 +53,25 @@
 					</li>
 
 					<li role="menuitem">
-						<a class="dropdown-link" href="#sketch"> Häufige Fragen </a>
+						<RouterLink class="dropdown-link" :to="{ path: '/', hash: '#faq' }">
+							Häufige Fragen
+						</RouterLink>
 					</li>
 					<li role="menuitem">
-						<a class="dropdown-link" href="#indesign"> Umgebung </a>
+						<RouterLink class="dropdown-link" to="/"> Home </RouterLink>
 					</li>
-					<li role="menuitem">
+					<!-- <li role="menuitem">
 						<a class="dropdown-link" href="#figma"> Figma </a>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 		</div>
 		<button class="uppercase logo cl-text-light" @click="goHome">
 			<span>der</span>bes<br />ondere<br /><span>urlaub</span>
 		</button>
-		<button class="mi-2rem">buchen</button>
+		<button class="mi-2rem uppercase btn--cta">
+			<a href="#book">buchen</a>
+		</button>
 	</div>
 </template>
 
@@ -174,7 +176,10 @@ const navigateToHouse = () => {
 	transition: all 1s ease;
 }
 .dropdown {
-	display: flex;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+	border-right: 1px solid rgba(255, 255, 255, 0.4);
+
+	display: none;
 	flex-direction: column;
 	width: 95%;
 	height: 90vh;
@@ -211,6 +216,7 @@ const navigateToHouse = () => {
 }
 
 .dropdown.active {
+	display: block;
 	visibility: visible;
 	opacity: 1;
 	transform: scale(1) translateX(-0) translateY(0);
@@ -237,7 +243,7 @@ const navigateToHouse = () => {
 	width: 40px;
 	padding: 15px;
 	aspect-ratio: 1;
-	background-color: var(--cl-dark-accent);
+	background-color: transparent;
 
 	position: relative;
 
@@ -306,5 +312,14 @@ const navigateToHouse = () => {
 .logo:focus-visible {
 	border: 1px solid white;
 	cursor: pointer;
+}
+
+.btn--cta a {
+	color: var(--cl-dark-accent);
+}
+
+.btn--cta:hover a,
+.btn--cta:focus a {
+	color: white;
 }
 </style>

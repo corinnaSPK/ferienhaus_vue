@@ -1,6 +1,6 @@
 <template>
-	<div class="dgridcenter house_wrapper text-center" ref="houseWrapper">
-		<div v-for="house in houses" :key="`house-${house.id}`" class="house_card">
+	<div class="dgridcenter house__wrapper text-center" ref="houseWrapper">
+		<div v-for="house in houses" :key="`house-${house.id}`" class="house__card">
 			<img :src="getImageUrl(house.imgmain)" alt="" />
 			<div class="card-main p-3">
 				<h3 class="fs-head-3 space-1">{{ house.name }}</h3>
@@ -62,7 +62,7 @@
 				</RouterLink> -->
 
 				<button
-					class="fs-copy uppercase cl-text-dark-accent"
+					class="fs-copy uppercase cl-text-dark-accent btn--cta"
 					@click="
 						() => {
 							router.push(`/house/${house.path}`);
@@ -98,15 +98,15 @@ onMounted(() => {
 </script>
 
 <style lang="css" scoped>
-.house_wrapper {
+.house__wrapper {
 	gap: 6rem;
 }
-.house_card {
+.house__card {
 	margin-inline: auto;
 	width: clamp(250px, 80%, 800px);
 }
 
-.house_card img {
+.house__card img {
 	max-width: 300px;
 	/* max-height: 300px; */
 	aspect-ratio: 1;
@@ -115,7 +115,7 @@ onMounted(() => {
 svg {
 	fill: white;
 }
-button {
+/* button {
 	padding: 1em 2em;
 	border: 1px solid transparent;
 	transition: all ease 0.5s;
@@ -129,7 +129,7 @@ button:focus-visible {
 	color: white;
 	border: 1px solid var(--cl-light-opa);
 	transition: all ease 0.5s;
-}
+} */
 
 h3::after {
 	content: "";
@@ -143,11 +143,11 @@ h3::after {
 }
 
 @media screen and (min-width: 700px) {
-	.house_card:nth-child(even) {
+	.house__card:nth-child(even) {
 		display: flex;
 		flex-direction: row;
 	}
-	.house_card:nth-child(odd) {
+	.house__card:nth-child(odd) {
 		display: flex;
 		flex-direction: row-reverse;
 	}

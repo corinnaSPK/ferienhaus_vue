@@ -13,7 +13,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+// https://medium.com/notonlycss/how-to-build-an-accordion-component-in-vue-js-570ee594404c
+import { customRef, ref } from "vue";
+import HousesOverviewHome from "./Home/HousesOverviewHome.vue";
 const panelOpen = ref(false);
 const togglePanel = () => {
 	panelOpen.value = !panelOpen.value;
@@ -26,6 +28,9 @@ button {
 	background-color: transparent;
 	color: inherit;
 	text-align: left;
+}
+button:hover {
+	cursor: pointer;
 }
 
 .content.open {

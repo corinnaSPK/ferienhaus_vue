@@ -1,5 +1,5 @@
 <template>
-	<section class="faq dgridcenter p-3-in cl-text-light">
+	<section class="faq dgridcenter p-3-in cl-text-light" id="faq">
 		<div class="accordion__content">
 			<div class="accordion__wrapper fs-copy">
 				<h2 class="fs-head-2 uppercase mb-5em">FAQ</h2>
@@ -13,7 +13,7 @@
 				<AccPanel>
 					<template v-slot:title>Gibt es Internet? </template>
 					<template v-slot:content
-						>Something small enough to escape casual notice.</template
+						><div id="faq-1">Lorem ipsum dolor sit.</div></template
 					>
 				</AccPanel>
 				<AccPanel>
@@ -21,13 +21,14 @@
 						>Muss ich eigene Bettwäsche mitbringen</template
 					>
 					<template v-slot:content
-						>Something small enough to escape casual notice.</template
+						><div id="faq-2">Lorem ipsum dolor sit.</div>
+						.</template
 					>
 				</AccPanel>
 				<AccPanel>
 					<template v-slot:title>Was kostet die Sauna?</template>
 					<template v-slot:content
-						>Something small enough to escape casual notice.</template
+						><div id="faq-3">Lorem ipsum dolor sit.</div></template
 					>
 				</AccPanel>
 				<AccPanel>
@@ -35,7 +36,7 @@
 						>Wo kriege ich Holz für den Kamin her?
 					</template>
 					<template v-slot:content
-						>Something small enough to escape casual notice.</template
+						><div id="faq-4">Lorem ipsum dolor sit.</div></template
 					>
 				</AccPanel>
 			</div>

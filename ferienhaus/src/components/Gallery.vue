@@ -1,5 +1,5 @@
 <template>
-	<section>
+	<section id="gallery">
 		<div class="gallery_wrapper">
 			<ul class="thumbnail flexwrap">
 				<li v-for="(img, index) in images" :key="img">
@@ -9,16 +9,18 @@
 					</button>
 				</li>
 			</ul>
-			<Modal :modalOpen="modalOpen" @close="closeLightbox">
-				<div class="current_image mcenter">
-					<!-- <img :src="`../src/assets/img/${images[currentImageIndex]}`" alt="" /> -->
-					<img :src="getImageUrl(images[currentImageIndex])" alt="" />
-					<div class="buttons_wrapper">
-						<button @click="prev">&larr;</button>
-						<button @click="next">&rarr;</button>
+			<Teleport to="body">
+				<Modal :modalOpen="modalOpen" @close="closeLightbox">
+					<div class="current_image mcenter">
+						<!-- <img :src="`../src/assets/img/${images[currentImageIndex]}`" alt="" /> -->
+						<img :src="getImageUrl(images[currentImageIndex])" alt="" />
+						<div class="buttons_wrapper">
+							<button @click="prev">&larr;</button>
+							<button @click="next">&rarr;</button>
+						</div>
 					</div>
-				</div>
-			</Modal>
+				</Modal>
+			</Teleport>
 			<!-- 
 			<div class="modal" v-show="modalOpen">
 				<button class="btn--close-modal" @click="closeLightbox">&times;</button>

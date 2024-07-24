@@ -1,5 +1,5 @@
 <template>
-	<header class="hero mb1">
+	<header class="hero mb1" id="mainhero">
 		<div class="hero__box dgridcenter p-3">
 			<div class="hero__box_text dgridcenter">
 				<h1 class="fs-head-main ff-sansserif uppercase space-3 mb-5em">
