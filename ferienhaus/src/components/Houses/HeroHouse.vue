@@ -1,5 +1,5 @@
 <template>
-	<div class="house_hero">
+	<div class="house__hero" id="hero">
 		<div class="right">
 			<!-- <img :src="`../src/assets/img/${house.imgmain}`" alt="" srcset="" /> -->
 			<img :src="getImageUrl(house.imgmain)" alt="" srcset="" />
@@ -20,7 +20,7 @@ const getImageUrl = (path) => {
 </script>
 
 <style lang="css" scoped>
-.house_hero {
+.house__hero {
 	display: grid;
 	grid-template-areas: "hero";
 	max-width: 700px;
@@ -29,9 +29,10 @@ const getImageUrl = (path) => {
 	margin-right: 20px;
 	margin-left: 10vw;
 	margin-inline: auto;
+	/* padding-top: 200px; */
 }
 
-.house_hero > * {
+.house__hero > * {
 	grid-area: hero;
 }
 .right {

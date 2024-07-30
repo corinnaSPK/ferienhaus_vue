@@ -71,7 +71,7 @@
 	z-index: 1;
 }
 
-.text__box::after {
+/* .text__box::after {
 	content: "";
 	position: absolute;
 	width: 110%;
@@ -80,20 +80,10 @@
 	top: -10px;
 	right: -100px;
 	z-index: -1;
-}
+} */
 
 .photo__box {
 	position: relative;
-}
-.photo__box::after {
-	content: "";
-	display: block;
-	position: absolute;
-	width: 90%;
-	height: 90%;
-	background-color: var(--cl-dark-hover);
-	top: 0;
-	z-index: -5;
 }
 
 .flexwrap > * {
@@ -103,5 +93,6 @@
 }
 .photo__box img {
 	aspect-ratio: 1;
+	border-radius: 50%;
 }
 </style>

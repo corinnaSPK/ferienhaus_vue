@@ -3,10 +3,16 @@
 		<button class="uppercase logo cl-text-light" @click="goHome">
 			<span>der</span>bes<br />ondere<br /><span>urlaub</span>
 		</button>
+<<<<<<< HEAD
 		<div class="nav-right dflexrow">
 			<button class="mi-2rem uppercase btn--cta">
 				<a href="#book">buchen</a>
 			</button>
+=======
+		<div class="nav__right dflexrow">
+			<button class="mi-2rem uppercase btn--cta" @click="goBook">Buchen</button>
+
+>>>>>>> 3e42bb0e405f0efe7dd0abaf6c100f77f2a253d2
 			<div class="menu">
 				<button
 					aria-controls="nav-main"
@@ -40,10 +46,17 @@
 								<ul>
 									<RouterLink
 										v-for="house in houses"
+<<<<<<< HEAD
 										:to="`/house/${house.path}`"
 										:key="`house-${house.id}`"
 										class="sublink"
 										@click="() => (showMenu = false)"
+=======
+										:to="{ path: `/house/${house.path}`, hash: '#hero' }"
+										:key="`house-${house.id}`"
+										class="sublink"
+										@click="closeSub"
+>>>>>>> 3e42bb0e405f0efe7dd0abaf6c100f77f2a253d2
 										>{{ house.name }}
 									</RouterLink>
 								</ul>
@@ -54,12 +67,22 @@
 							<RouterLink
 								class="dropdown-link"
 								:to="{ path: '/', hash: '#faq' }"
+<<<<<<< HEAD
+=======
+								@click="closeSub"
+>>>>>>> 3e42bb0e405f0efe7dd0abaf6c100f77f2a253d2
 							>
 								Häufige Fragen
 							</RouterLink>
 						</li>
 						<li role="menuitem">
+<<<<<<< HEAD
 							<RouterLink class="dropdown-link" to="/"> Home </RouterLink>
+=======
+							<RouterLink class="dropdown-link" to="/" @click="closeSub">
+								Home
+							</RouterLink>
+>>>>>>> 3e42bb0e405f0efe7dd0abaf6c100f77f2a253d2
 						</li>
 						<!-- <li role="menuitem">
 						<a class="dropdown-link" href="#figma"> Figma </a>
@@ -77,6 +100,10 @@ import { useRouter, RouterLink } from "vue-router";
 
 const goHome = () => {
 	router.push("/");
+};
+
+const goBook = () => {
+	router.push({ path: "/", hash: "#book" });
 };
 // toggle menu and sub vars
 const showMenu = ref(false);
@@ -98,13 +125,10 @@ const toggleNav = (e) => {
 const toggleSub = () => {
 	showSub.value = !showSub.value;
 };
-
-// routing
-
-// 									:to="`house/${house.path}`"
-const navigateToHouse = () => {
-	// router.push(`/house/${house.id}`);
-	console.log(`${route.params.id}`);
+const closeSub = () => {
+	showSub.value = false;
+	showMenu.value = false;
+	console.log("closesub");
 };
 </script>
 
@@ -114,6 +138,10 @@ const navigateToHouse = () => {
 	width: 100%;
 	backdrop-filter: blur(10px);
 	position: fixed;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3e42bb0e405f0efe7dd0abaf6c100f77f2a253d2
 	padding-inline: 1rem;
 	background-color: var(--cl-bg-nav);
 
@@ -177,14 +205,14 @@ const navigateToHouse = () => {
 
 	display: none;
 	flex-direction: column;
-	width: 95%;
+	width: 100%;
 	height: 90vh;
 	position: absolute;
 	left: 0;
 	z-index: 1;
 	visibility: hidden;
 	opacity: 0;
-	transform: scale(0.97) translateX(-50px) translateY(-10px);
+	transform: scale(0.97) translateX(50px) translateY(-10px);
 	transition: 0.5s ease-in-out;
 	border-bottom-right-radius: 50px;
 	background-image: linear-gradient(
@@ -193,6 +221,14 @@ const navigateToHouse = () => {
 		var(--cl-dark-accent)
 	);
 }
+@keyframes fade-in {
+	100% {
+		opacity: 1;
+		display: block;
+		visibility: visible;
+	}
+}
+
 .submenu {
 	display: none;
 	width: 95%;
@@ -216,7 +252,8 @@ const navigateToHouse = () => {
 	display: block;
 	visibility: visible;
 	opacity: 1;
-	transform: scale(1) translateX(-0) translateY(0);
+	transform: scale(1) translateX(0) translateY(0);
+	left: 0;
 }
 .submenu.active {
 	display: block;
@@ -230,6 +267,10 @@ const navigateToHouse = () => {
 	padding-bottom: 0.3em;
 }
 
+.dropdown-link.router-link-active,
+.sublink.router-link-active {
+	color: goldenrod;
+}
 /* open button */
 
 .mobile-nav-toggle {
@@ -310,6 +351,7 @@ const navigateToHouse = () => {
 	border: 1px solid white;
 	cursor: pointer;
 }
+/* <!-- :to="{ path: `/house/${house.path}`, hash: '#hero' }" --> */
 
 .btn--cta {
 	align-self: center;
