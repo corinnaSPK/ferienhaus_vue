@@ -1,77 +1,73 @@
 <template>
 	<div class="nav dflexrow">
-		<div class="menu">
-			<!-- 	<button
-				class="nav-link dropdown-btn mi-2rem"
-				aria-haspopup="true"
-				:aria-expanded="showMenu"
-				aria-label="browse"
-				@click="toggleNav"
-			>
-				Menu
-			</button> -->
-			<button
-				aria-controls="nav-main"
-				aria-haspopup="true"
-				:aria-expanded="showMenu"
-				aria-label="browse"
-				@click="toggleNav"
-				class="mobile-nav-toggle"
-				data-mobile-nav-toggle
-			>
-				<div class="menu-box open">
-					<span class="a" :class="{ close: showMenu }"></span>
-					<span class="b" :class="{ close: showMenu }"></span>
-					<span class="c" :class="{ close: showMenu }"></span>
-				</div>
-			</button>
-			<div class="nav-main dropdown" :class="{ active: showMenu }">
-				<ul role="menu" class="dgridcenter">
-					<li role="menuitem">
-						<button
-							aria-haspopup="true"
-							:aria-expanded="showSub"
-							aria-label="browse"
-							@click="toggleSub"
-							class="nav-button"
-						>
-							Unterkünfte
-							<span :class="{ spanopen: showSub }"></span>
-						</button>
-						<div class="submenu" :class="{ active: showSub }">
-							<ul>
-								<RouterLink
-									v-for="house in houses"
-									:to="`/house/${house.path}`"
-									:key="`house-${house.id}`"
-									class="sublink"
-									@click="() => (showMenu = false)"
-									>{{ house.name }}
-								</RouterLink>
-							</ul>
-						</div>
-					</li>
-
-					<li role="menuitem">
-						<RouterLink class="dropdown-link" :to="{ path: '/', hash: '#faq' }">
-							Häufige Fragen
-						</RouterLink>
-					</li>
-					<li role="menuitem">
-						<RouterLink class="dropdown-link" to="/"> Home </RouterLink>
-					</li>
-					<!-- <li role="menuitem">
-						<a class="dropdown-link" href="#figma"> Figma </a>
-					</li> -->
-				</ul>
-			</div>
-		</div>
 		<button class="uppercase logo cl-text-light" @click="goHome">
 			<span>der</span>bes<br />ondere<br /><span>urlaub</span>
 		</button>
-		<button class="mi-2rem uppercase btn--cta">
-			<a href="#book">buchen</a>
-		</button>
+		<div class="nav-right dflexrow">
+			<button class="mi-2rem uppercase btn--cta">
+				<a href="#book">buchen</a>
+			</button>
+			<div class="menu">
+				<button
+					aria-controls="nav-main"
+					aria-haspopup="true"
+					:aria-expanded="showMenu"
+					aria-label="browse"
+					@click="toggleNav"
+					class="mobile-nav-toggle"
+					data-mobile-nav-toggle
+				>
+					<div class="menu-box open">
+						<span class="a" :class="{ close: showMenu }"></span>
+						<span class="b" :class="{ close: showMenu }"></span>
+						<span class="c" :class="{ close: showMenu }"></span>
+					</div>
+				</button>
+				<div class="nav-main dropdown" :class="{ active: showMenu }">
+					<ul role="menu" class="dgridcenter">
+						<li role="menuitem">
+							<button
+								aria-haspopup="true"
+								:aria-expanded="showSub"
+								aria-label="browse"
+								@click="toggleSub"
+								class="nav-button"
+							>
+								Unterkünfte
+								<span :class="{ spanopen: showSub }"></span>
+							</button>
+							<div class="submenu" :class="{ active: showSub }">
+								<ul>
+									<RouterLink
+										v-for="house in houses"
+										:to="`/house/${house.path}`"
+										:key="`house-${house.id}`"
+										class="sublink"
+										@click="() => (showMenu = false)"
+										>{{ house.name }}
+									</RouterLink>
+								</ul>
+							</div>
+						</li>
+
+						<li role="menuitem">
+							<RouterLink
+								class="dropdown-link"
+								:to="{ path: '/', hash: '#faq' }"
+							>
+								Häufige Fragen
+							</RouterLink>
+						</li>
+						<li role="menuitem">
+							<RouterLink class="dropdown-link" to="/"> Home </RouterLink>
+						</li>
+						<!-- <li role="menuitem">
+						<a class="dropdown-link" href="#figma"> Figma </a>
+					</li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -118,7 +114,7 @@ const navigateToHouse = () => {
 	width: 100%;
 	backdrop-filter: blur(10px);
 	position: fixed;
-	/* height: 50px; */
+	padding-inline: 1rem;
 	background-color: var(--cl-bg-nav);
 
 	justify-content: space-between;
@@ -184,6 +180,7 @@ const navigateToHouse = () => {
 	width: 95%;
 	height: 90vh;
 	position: absolute;
+	left: 0;
 	z-index: 1;
 	visibility: hidden;
 	opacity: 0;
@@ -314,6 +311,9 @@ const navigateToHouse = () => {
 	cursor: pointer;
 }
 
+.btn--cta {
+	align-self: center;
+}
 .btn--cta a {
 	color: var(--cl-dark-accent);
 }
