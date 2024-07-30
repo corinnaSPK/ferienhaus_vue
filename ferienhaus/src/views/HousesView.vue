@@ -2,12 +2,7 @@
 	<div :key="$route.params.path">
 		<HeroHouse :house="house"></HeroHouse>
 		<HeroIntro :house="house"></HeroIntro>
-<<<<<<< HEAD
-		<HouseDetails :house="house"></HouseDetails>
-=======
-		<HousesDetails :house="house"></HousesDetails>
->>>>>>> 3e42bb0e405f0efe7dd0abaf6c100f77f2a253d2
-		<!-- <Gallery :house="house"></Gallery> -->
+		<Gallery :house="house"></Gallery>
 	</div>
 	<!-- <ul class="p-3">
 			<li>gallery</li>
@@ -21,12 +16,7 @@
 <script setup>
 import HeroHouse from "../components/Houses/HeroHouse.vue";
 import HeroIntro from "../components/Houses/HeroIntro.vue";
-<<<<<<< HEAD
-import HouseDetails from "../components/Houses/HouseDetails.vue";
-=======
-import HousesDetails from "@/components/Houses/HousesDetails.vue";
-// import Gallery from "../components/Gallery.vue";
->>>>>>> 3e42bb0e405f0efe7dd0abaf6c100f77f2a253d2
+import Gallery from "../components/Gallery.vue";
 
 import { ref, watch, onMounted, onBeforeMount, computed } from "vue";
 import { useRoute } from "vue-router";
