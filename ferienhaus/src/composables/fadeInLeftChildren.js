@@ -12,7 +12,7 @@ usefadeInLeftChildren(target) {
     ease: "back.out(1.5)",
     opacity: 0,
     duration: 1.2,
-    stagger: 1,
+    stagger: .1,
   }
 );
 }

@@ -95,6 +95,7 @@ import { usefadeInLeftChildren } from "@/composables/fadeInLeftChildren.js";
 onMounted(() => {
 	usefadeInLeftChildren(houseWrapper.value);
 });
+// usefadeInLeftChildren(houseWrapper.value);
 </script>
 
 <style lang="css" scoped>

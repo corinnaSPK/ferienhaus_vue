@@ -1,77 +1,75 @@
 <template>
 	<div class="nav dflexrow">
-		<div class="menu">
-			<!-- 	<button
-				class="nav-link dropdown-btn mi-2rem"
-				aria-haspopup="true"
-				:aria-expanded="showMenu"
-				aria-label="browse"
-				@click="toggleNav"
-			>
-				Menu
-			</button> -->
-			<button
-				aria-controls="nav-main"
-				aria-haspopup="true"
-				:aria-expanded="showMenu"
-				aria-label="browse"
-				@click="toggleNav"
-				class="mobile-nav-toggle"
-				data-mobile-nav-toggle
-			>
-				<div class="menu-box open">
-					<span class="a" :class="{ close: showMenu }"></span>
-					<span class="b" :class="{ close: showMenu }"></span>
-					<span class="c" :class="{ close: showMenu }"></span>
-				</div>
-			</button>
-			<div class="nav-main dropdown" :class="{ active: showMenu }">
-				<ul role="menu" class="dgridcenter">
-					<li role="menuitem">
-						<button
-							aria-haspopup="true"
-							:aria-expanded="showSub"
-							aria-label="browse"
-							@click="toggleSub"
-							class="nav-button"
-						>
-							Unterkünfte
-							<span :class="{ spanopen: showSub }"></span>
-						</button>
-						<div class="submenu" :class="{ active: showSub }">
-							<ul>
-								<RouterLink
-									v-for="house in houses"
-									:to="`/house/${house.path}`"
-									:key="`house-${house.id}`"
-									class="sublink"
-									@click="() => (showMenu = false)"
-									>{{ house.name }}
-								</RouterLink>
-							</ul>
-						</div>
-					</li>
-
-					<li role="menuitem">
-						<RouterLink class="dropdown-link" :to="{ path: '/', hash: '#faq' }">
-							Häufige Fragen
-						</RouterLink>
-					</li>
-					<li role="menuitem">
-						<RouterLink class="dropdown-link" to="/"> Home </RouterLink>
-					</li>
-					<!-- <li role="menuitem">
-						<a class="dropdown-link" href="#figma"> Figma </a>
-					</li> -->
-				</ul>
-			</div>
-		</div>
 		<button class="uppercase logo cl-text-light" @click="goHome">
 			<span>der</span>bes<br />ondere<br /><span>urlaub</span>
 		</button>
-		<button class="mi-2rem uppercase btn--cta">
-			<a href="#book">buchen</a>
-		</button>
+		<div class="nav__right dflexrow">
+			<button class="mi-2rem uppercase btn--cta" @click="goBook">Buchen</button>
+
+			<div class="menu">
+				<button
+					aria-controls="nav-main"
+					aria-haspopup="true"
+					:aria-expanded="showMenu"
+					aria-label="browse"
+					@click="toggleNav"
+					class="mobile-nav-toggle"
+					data-mobile-nav-toggle
+				>
+					<div class="menu-box open">
+						<span class="a" :class="{ close: showMenu }"></span>
+						<span class="b" :class="{ close: showMenu }"></span>
+						<span class="c" :class="{ close: showMenu }"></span>
+					</div>
+				</button>
+				<div class="nav-main dropdown" :class="{ active: showMenu }">
+					<ul role="menu" class="dgridcenter">
+						<li role="menuitem">
+							<button
+								aria-haspopup="true"
+								:aria-expanded="showSub"
+								aria-label="browse"
+								@click="toggleSub"
+								class="nav-button"
+							>
+								Unterkünfte
+								<span :class="{ spanopen: showSub }"></span>
+							</button>
+							<div class="submenu" :class="{ active: showSub }">
+								<ul>
+									<RouterLink
+										v-for="house in houses"
+										:to="{ path: `/house/${house.path}`, hash: '#hero' }"
+										:key="`house-${house.id}`"
+										class="sublink"
+										@click="closeSub"
+										>{{ house.name }}
+									</RouterLink>
+								</ul>
+							</div>
+						</li>
+
+						<li role="menuitem">
+							<RouterLink
+								class="dropdown-link"
+								:to="{ path: '/', hash: '#faq' }"
+								@click="closeSub"
+							>
+								Häufige Fragen
+							</RouterLink>
+						</li>
+						<li role="menuitem">
+							<RouterLink class="dropdown-link" to="/" @click="closeSub">
+								Home
+							</RouterLink>
+						</li>
+						<!-- <li role="menuitem">
+						<a class="dropdown-link" href="#figma"> Figma </a>
+					</li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -81,6 +79,10 @@ import { useRouter, RouterLink } from "vue-router";
 
 const goHome = () => {
 	router.push("/");
+};
+
+const goBook = () => {
+	router.push({ path: "/", hash: "#book" });
 };
 // toggle menu and sub vars
 const showMenu = ref(false);
@@ -102,13 +104,10 @@ const toggleNav = (e) => {
 const toggleSub = () => {
 	showSub.value = !showSub.value;
 };
-
-// routing
-
-// 									:to="`house/${house.path}`"
-const navigateToHouse = () => {
-	// router.push(`/house/${house.id}`);
-	console.log(`${route.params.id}`);
+const closeSub = () => {
+	showSub.value = false;
+	showMenu.value = false;
+	console.log("closesub");
 };
 </script>
 
@@ -118,7 +117,8 @@ const navigateToHouse = () => {
 	width: 100%;
 	backdrop-filter: blur(10px);
 	position: fixed;
-	/* height: 50px; */
+
+	padding-inline: 1rem;
 	background-color: var(--cl-bg-nav);
 
 	justify-content: space-between;
@@ -181,13 +181,13 @@ const navigateToHouse = () => {
 
 	display: none;
 	flex-direction: column;
-	width: 95%;
+	width: 100%;
 	height: 90vh;
 	position: absolute;
 	z-index: 1;
 	visibility: hidden;
 	opacity: 0;
-	transform: scale(0.97) translateX(-50px) translateY(-10px);
+	transform: scale(0.97) translateX(50px) translateY(-10px);
 	transition: 0.5s ease-in-out;
 	border-bottom-right-radius: 50px;
 	background-image: linear-gradient(
@@ -196,6 +196,14 @@ const navigateToHouse = () => {
 		var(--cl-dark-accent)
 	);
 }
+@keyframes fade-in {
+	100% {
+		opacity: 1;
+		display: block;
+		visibility: visible;
+	}
+}
+
 .submenu {
 	display: none;
 	width: 95%;
@@ -219,7 +227,8 @@ const navigateToHouse = () => {
 	display: block;
 	visibility: visible;
 	opacity: 1;
-	transform: scale(1) translateX(-0) translateY(0);
+	transform: scale(1) translateX(0) translateY(0);
+	left: 0;
 }
 .submenu.active {
 	display: block;
@@ -233,6 +242,10 @@ const navigateToHouse = () => {
 	padding-bottom: 0.3em;
 }
 
+.dropdown-link.router-link-active,
+.sublink.router-link-active {
+	color: goldenrod;
+}
 /* open button */
 
 .mobile-nav-toggle {
@@ -313,7 +326,11 @@ const navigateToHouse = () => {
 	border: 1px solid white;
 	cursor: pointer;
 }
+/* <!-- :to="{ path: `/house/${house.path}`, hash: '#hero' }" --> */
 
+.btn--cta {
+	align-self: center;
+}
 .btn--cta a {
 	color: var(--cl-dark-accent);
 }

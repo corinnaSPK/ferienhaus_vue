@@ -1,6 +1,9 @@
 <template>
-	<section id="gallery">
+	<section id="gallery" class="p-3">
 		<div class="gallery_wrapper">
+			<h3 class="fs-head-3 fw-lighter mb-5em text-center">
+				Ein kleiner Einblick in unser Paradies
+			</h3>
 			<ul class="thumbnail flexwrap">
 				<li v-for="(img, index) in images" :key="img">
 					<button @click="openLightbox">

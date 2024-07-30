@@ -11,7 +11,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, nextTick } from "vue";
+const close = ref(null);
 /* const close = ref(null);
 
 const focusButton = () => {
@@ -21,13 +22,30 @@ const focusButton = () => {
 	}
 };
 onMounted(() => focusButton()); */
-
 const { modalOpen } = defineProps(["modalOpen"]);
 const emit = defineEmits(["close"]);
 const closeLightbox = () => {
 	emit("close");
 };
 
+console.log(modalOpen);
+console.log(close.value);
+const focusButton = () => {
+	if (modalOpen) {
+		close.value.focus();
+		console.log(close.value);
+	} else {
+		console.log("wrong");
+		console.log(close.value);
+	}
+};
+/* onMounted(() => {
+	focusButton();
+	console.log("moun");
+}); */
+nextTick(() => {
+	focusButton();
+});
 // in Parent ergänzen
 
 /* const modalOpen = ref(false);
