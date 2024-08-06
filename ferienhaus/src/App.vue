@@ -7,20 +7,8 @@ import Footer from "./components/Footer.vue";
 <template>
 	<Navigation></Navigation>
 
-	<RouterView v-slot="{ Component }">
-		<transition name="fade"><Component :is="Component"></Component> </transition
-	></RouterView>
+	<RouterView></RouterView>
 	<Footer></Footer>
 </template>
 
-<style>
-.fade-enter-from,
-.fade-enter-leave {
-	opacity: 0;
-	scale: 0.3;
-}
-.fade-enter-active,
-.fade-leave-active {
-	transition: all 0.3s ease;
-}
-</style>
+<style></style>

@@ -28,7 +28,7 @@
 			</div>
 		</div>
 
-		<!-- <Gallery :house="house"></Gallery> -->
+		<Gallery :house="house"></Gallery>
 	</section>
 </template>
 

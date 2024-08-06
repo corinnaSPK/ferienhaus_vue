@@ -3,7 +3,8 @@
 		<button class="uppercase logo cl-text-light" @click="goHome">
 			<span>der</span>bes<br />ondere<br /><span>urlaub</span>
 		</button>
-		<div class="nav-right">
+		<div class="nav-right dflexrow">
+			<button class="uppercase btn--cta" @click="goBooking">buchen</button>
 			<div class="menu">
 				<button
 					aria-controls="nav-main"
@@ -75,6 +76,9 @@ import { useRouter, RouterLink } from "vue-router";
 const goHome = () => {
 	router.push("/");
 };
+const goBooking = () => {
+	router.push({ path: "/", hash: "#book" });
+};
 // toggle menu and sub vars
 const showMenu = ref(false);
 const showSub = ref(false);
@@ -109,7 +113,8 @@ const navigateToHouse = () => {
 .nav {
 	z-index: 100;
 	width: 100%;
-	backdrop-filter: blur(10px);
+	padding: 1rem;
+	/* backdrop-filter: blur(50px); */
 	position: fixed;
 	/* height: 50px; */
 	background-color: var(--cl-bg-nav);
@@ -308,6 +313,9 @@ const navigateToHouse = () => {
 	cursor: pointer;
 }
 
+.btn--cta {
+	align-self: center;
+}
 .btn--cta a {
 	color: var(--cl-dark-accent);
 }
