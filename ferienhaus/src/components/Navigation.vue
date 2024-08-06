@@ -24,6 +24,11 @@
 				<div class="nav-main dropdown" :class="{ active: showMenu }">
 					<ul role="menu" class="dgridcenter">
 						<li role="menuitem">
+							<RouterLink class="dropdown-link" to="/" @click="closeNav">
+								Heimathafen
+							</RouterLink>
+						</li>
+						<li role="menuitem">
 							<button
 								aria-haspopup="true"
 								:aria-expanded="showSub"
@@ -41,7 +46,7 @@
 										:to="`/house/${house.path}`"
 										:key="`house-${house.id}`"
 										class="sublink"
-										@click="() => (showMenu = false)"
+										@click="closeNav"
 										>{{ house.name }}
 									</RouterLink>
 								</ul>
@@ -52,13 +57,12 @@
 							<RouterLink
 								class="dropdown-link"
 								:to="{ path: '/', hash: '#faq' }"
+								@click="closeNav"
 							>
 								Häufige Fragen
 							</RouterLink>
 						</li>
-						<li role="menuitem">
-							<RouterLink class="dropdown-link" to="/"> Home </RouterLink>
-						</li>
+
 						<!-- <li role="menuitem">
 						<a class="dropdown-link" href="#figma"> Figma </a>
 					</li> -->
@@ -92,14 +96,20 @@ const houses = ref(housesData);
 // console.log(houses.value);
 // toggle menu and sub foos
 
+// öffnet und schließt nav
 const toggleNav = (e) => {
 	showMenu.value = !showMenu.value;
 };
 
+// öffnet und schließt sub
 const toggleSub = () => {
 	showSub.value = !showSub.value;
 };
 
+const closeNav = () => {
+	showMenu.value = false;
+	showSub.value = false;
+};
 // routing
 
 // 									:to="`house/${house.path}`"
@@ -175,20 +185,19 @@ const navigateToHouse = () => {
 }
 .dropdown {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-	border-right: 1px solid rgba(255, 255, 255, 0.4);
-
-	display: none;
+	border-left: 1px solid rgba(255, 255, 255, 0.4);
+	/* display: none; */
 	flex-direction: column;
 	width: 95%;
-	height: 90vh;
-	left: 0;
+	height: 85vh;
+	right: 0;
 	position: absolute;
 	z-index: 1;
 	visibility: hidden;
 	opacity: 0;
 	transform: scale(0.97) translateX(-50px) translateY(-10px);
-	transition: 0.5s ease-in-out;
-	border-bottom-right-radius: 50px;
+	transition: 0.8s ease-in-out;
+	border-bottom-left-radius: 50px;
 	background-image: linear-gradient(
 		to bottom,
 		var(--cl-bg-nav),

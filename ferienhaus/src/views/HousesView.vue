@@ -1,20 +1,9 @@
 <template>
-	<div :key="$route.params.path">
+	<div>
 		<HeroHouse :house="house"></HeroHouse>
 		<HeroIntro :house="house"></HeroIntro>
 		<HousesDetails :house="house"></HousesDetails>
 	</div>
-	<!-- <ul class="p-3">
-			<li>gallery</li>
-			<li>ausstattung</li>
-
-			<li>testi</li>
-			<li>verfügbarkeit</li>
-			
-
-  }
-
-	</ul> -->
 </template>
 
 <script setup>
