@@ -6,7 +6,11 @@
 			</h3>
 			<ul class="thumbnail flexwrap">
 				<li v-for="(img, index) in images" :key="img">
-					<button @click="openLightbox">
+					<button
+						@click="openLightbox"
+						@keyup.enter="openLightbox"
+						:id="currentImageIndex"
+					>
 						<!-- <img :src="`../src/assets/img/${img}`" alt="" :id="index" /> -->
 						<img :src="getImageUrl(img)" alt="" :id="index" />
 					</button>
@@ -18,8 +22,8 @@
 						<!-- <img :src="`../src/assets/img/${images[currentImageIndex]}`" alt="" /> -->
 						<img :src="getImageUrl(images[currentImageIndex])" alt="" />
 						<div class="buttons_wrapper">
-							<button @click="prev">&larr;</button>
-							<button @click="next">&rarr;</button>
+							<button ref="btnPrev" @click="prev">&larr;</button>
+							<button ref="btnNext" @click="next">&rarr;</button>
 						</div>
 					</div>
 				</Modal>
@@ -40,24 +44,38 @@
 </template>
 
 <script setup>
+// ! KEy enter function um modal izu öffnen ergänzen
 import Modal from "../components/Modal.vue";
-import { ref } from "vue";
+import { ref, onMounted, watch, nextTick } from "vue";
 const { house } = defineProps(["house"]);
 // momentan loopen wir durch ein array mit einfachen strings ["abc", "def", "etc"]; wir müssern aber statt der e3infachen strings ein objekt loopen, das muss im code noch angepasst werden
 const images = house.imgintro;
-
+const btnNext = ref(null);
 const getImageUrl = (path) => {
 	return new URL(`../assets/img/${path}`, import.meta.url).href;
 };
 const modalOpen = ref(false);
 
-const currentImage = ref(null);
+const currentImage = ref(getImageUrl(images[0]));
 const currentImageIndex = ref(null);
 const openLightbox = (e) => {
 	modalOpen.value = true;
-	currentImage.value = e.target.src;
-	currentImageIndex.value = e.target.id;
-	currentImageIndex.value = parseInt(currentImageIndex.value);
+	// console.log(e.x === 0);
+
+	if (e.x === 0) {
+		currentImageIndex.value = 0;
+	} else {
+		currentImage.value = e.target.src;
+		currentImageIndex.value = e.target.id;
+		currentImageIndex.value = parseInt(currentImageIndex.value);
+	}
+
+	if (modalOpen.value) {
+		nextTick(() => {});
+		nextTick(() => {
+			btnNext.value.focus();
+		});
+	}
 };
 
 const closeLightbox = () => {
@@ -70,7 +88,6 @@ const prev = () => {
 	else {
 		currentImageIndex.value = currentImageIndex.value - 1;
 	}
-	console.log(currentImageIndex.value);
 };
 
 const next = () => {
@@ -80,6 +97,16 @@ const next = () => {
 		currentImageIndex.value = currentImageIndex.value + 1;
 	}
 };
+/* onMounted(() => {
+	console.log(modalOpen.value);
+}); */
+/* watch(modalOpen, async (newState, oldState) => {
+	if (modalOpen) {
+		console.log("modal open");
+		console.log(btnNext.value);
+		btnNext.value.focus();
+	}
+}); */
 </script>
 
 <style lang="css" scoped>
@@ -142,5 +169,7 @@ button {
 .buttons_wrapper button:hover,
 .buttons_wrapper button:focus {
 	background-color: var(--cl-light);
+	/* background-color: red; */
+	border: 1px solid black;
 }
 </style>

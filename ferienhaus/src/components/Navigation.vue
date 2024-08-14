@@ -14,6 +14,7 @@
 					@click="toggleNav"
 					class="mobile-nav-toggle"
 					data-mobile-nav-toggle
+					ref="toggleMenu"
 				>
 					<div class="menu-box open">
 						<span class="a" :class="{ close: showMenu }"></span>
@@ -74,7 +75,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRouter, RouterLink } from "vue-router";
 
 const goHome = () => {
@@ -195,9 +196,10 @@ const navigateToHouse = () => {
 	z-index: 1;
 	visibility: hidden;
 	opacity: 0;
-	transform: scale(0.97) translateX(-50px) translateY(-10px);
+	transform: scale(0.97) translateX(50px) translateY(-10px);
 	transition: 0.8s ease-in-out;
 	border-bottom-left-radius: 50px;
+
 	background-image: linear-gradient(
 		to bottom,
 		var(--cl-bg-nav),
@@ -229,6 +231,7 @@ const navigateToHouse = () => {
 	opacity: 1;
 	transform: scale(1) translateX(-0) translateY(0);
 }
+
 .submenu.active {
 	display: block;
 	visibility: visible;

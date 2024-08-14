@@ -11,8 +11,14 @@ import HousesWrapperHome from "@/components/Home/HousesWrapperHome.vue";
 </script>
 
 <style lang="css" scoped>
-/* .houses {
+.houses {
+	background-image: linear-gradient(
+		to bottom,
+		var(--cl-bg-nav),
+		var(--cl-dark-accent) /* white */
+	);
 }
+/* 
 .houses::after {
 	display: block;
 
