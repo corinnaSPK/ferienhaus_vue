@@ -6,16 +6,17 @@
 				<span :class="{ spanopen: panelOpen }" aria-hidden="true"> </span>
 			</button>
 		</div>
-		<div class="content" :class="{ open: panelOpen }">
-			<slot name="content" />
-		</div>
+		<Transition name="fade">
+			<div class="content" v-show="panelOpen">
+				<slot name="content" />
+			</div>
+		</Transition>
 	</div>
 </template>
 
 <script setup>
 // https://medium.com/notonlycss/how-to-build-an-accordion-component-in-vue-js-570ee594404c
 import { customRef, ref } from "vue";
-import HousesOverviewHome from "./Home/HousesOverviewHome.vue";
 const panelOpen = ref(false);
 const togglePanel = () => {
 	panelOpen.value = !panelOpen.value;
@@ -33,13 +34,6 @@ button:hover {
 	cursor: pointer;
 }
 
-.content.open {
-	display: block;
-}
-.content {
-	display: none;
-	/* border-bottom: 1px solid white; */
-}
 .title {
 	display: flex;
 	justify-content: space-between;

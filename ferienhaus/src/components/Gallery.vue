@@ -6,11 +6,7 @@
 			</h3>
 			<ul class="thumbnail flexwrap">
 				<li v-for="(img, index) in images" :key="img">
-					<button
-						@click="openLightbox"
-						@keyup.enter="openLightbox"
-						:id="currentImageIndex"
-					>
+					<button @click="openLightbox" @keyup.enter="openLightbox" :id="index">
 						<!-- <img :src="`../src/assets/img/${img}`" alt="" :id="index" /> -->
 						<img :src="getImageUrl(img)" alt="" :id="index" />
 					</button>
@@ -63,6 +59,8 @@ const openLightbox = (e) => {
 	// console.log(e.x === 0);
 
 	if (e.x === 0) {
+		console.log(e.target.id);
+		// currentImageIndex.value = e.target.id;
 		currentImageIndex.value = 0;
 	} else {
 		currentImage.value = e.target.src;
@@ -91,6 +89,7 @@ const prev = () => {
 };
 
 const next = () => {
+	console.log("go forw");
 	if (currentImageIndex.value === images.length - 1) {
 		currentImageIndex.value = 0;
 	} else {

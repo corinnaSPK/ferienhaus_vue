@@ -23,3 +23,26 @@ a {
 	transition: 0.4s;
 	padding: 3px;
 }
+
+/* !Transitions ################################################################ */
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: all 0.8s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+	transform: translateX(500px);
+}
+.bottom-enter-active,
+.bottom-leave-active {
+	transition: all 0.8s ease-in-out;
+}
+
+.bottom-enter-from,
+.bottom-leave-to {
+	opacity: 0;
+	transform: translatey(500px);
+}

@@ -22,53 +22,54 @@
 						<span class="c" :class="{ close: showMenu }"></span>
 					</div>
 				</button>
-				<div class="nav-main dropdown" :class="{ active: showMenu }">
-					<ul role="menu" class="dgridcenter">
-						<li role="menuitem">
-							<RouterLink class="dropdown-link" to="/" @click="closeNav">
-								Heimathafen
-							</RouterLink>
-						</li>
-						<li role="menuitem">
-							<button
-								aria-haspopup="true"
-								:aria-expanded="showSub"
-								aria-label="browse"
-								@click="toggleSub"
-								class="nav-button"
-							>
-								Unterkünfte
-								<span :class="{ spanopen: showSub }"></span>
-							</button>
-							<div class="submenu" :class="{ active: showSub }">
-								<ul>
-									<RouterLink
-										v-for="house in houses"
-										:to="`/house/${house.path}`"
-										:key="`house-${house.id}`"
-										class="sublink"
-										@click="closeNav"
-										>{{ house.name }}
-									</RouterLink>
-								</ul>
-							</div>
-						</li>
+				<Transition name="fade"
+					><div class="nav-main dropdown" v-show="showMenu">
+						<ul role="menu" class="dgridcenter">
+							<li role="menuitem">
+								<RouterLink class="dropdown-link" to="/" @click="closeNav">
+									Heimathafen
+								</RouterLink>
+							</li>
+							<li role="menuitem">
+								<button
+									aria-haspopup="true"
+									:aria-expanded="showSub"
+									aria-label="browse"
+									@click="toggleSub"
+									class="nav-button"
+								>
+									Unterkünfte
+									<span :class="{ spanopen: showSub }"></span>
+								</button>
 
-						<li role="menuitem">
-							<RouterLink
-								class="dropdown-link"
-								:to="{ path: '/', hash: '#faq' }"
-								@click="closeNav"
-							>
-								Häufige Fragen
-							</RouterLink>
-						</li>
+								<Transition name="bottom"
+									><div class="submenu" v-show="showSub">
+										<ul>
+											<RouterLink
+												v-for="house in houses"
+												:to="`/house/${house.path}`"
+												:key="`house-${house.id}`"
+												class="sublink"
+												@click="closeNav"
+												>{{ house.name }}
+											</RouterLink>
+										</ul>
+									</div></Transition
+								>
+							</li>
 
-						<!-- <li role="menuitem">
-						<a class="dropdown-link" href="#figma"> Figma </a>
-					</li> -->
-					</ul>
-				</div>
+							<li role="menuitem">
+								<RouterLink
+									class="dropdown-link"
+									:to="{ path: '/', hash: '#faq' }"
+									@click="closeNav"
+								>
+									Häufige Fragen
+								</RouterLink>
+							</li>
+						</ul>
+					</div></Transition
+				>
 			</div>
 		</div>
 	</div>
@@ -94,7 +95,6 @@ const router = useRouter();
 import housesData from "../data/houses.json";
 const houses = ref(housesData);
 
-// console.log(houses.value);
 // toggle menu and sub foos
 
 // öffnet und schließt nav
@@ -194,10 +194,11 @@ const navigateToHouse = () => {
 	right: 0;
 	position: absolute;
 	z-index: 1;
-	visibility: hidden;
-	opacity: 0;
-	transform: scale(0.97) translateX(50px) translateY(-10px);
-	transition: 0.8s ease-in-out;
+
+	display: block;
+	visibility: visible;
+	/* transform: scale(0.97) translateX(50px) translateY(-10px); */
+	/* transition: 0.8s ease-in-out; */
 	border-bottom-left-radius: 50px;
 
 	background-image: linear-gradient(
@@ -207,12 +208,12 @@ const navigateToHouse = () => {
 	);
 }
 .submenu {
-	display: none;
+	/* display: none; */
 	width: 95%;
 
 	z-index: 1;
-	visibility: hidden;
-	opacity: 0;
+	/* visibility: hidden; */
+	/* opacity: 0; */
 }
 .dropdown ul {
 	width: 90%;
@@ -223,19 +224,6 @@ const navigateToHouse = () => {
 	gap: 0.5rem;
 	padding: 1.2rem;
 	font-size: clamp(1.85rem, 1rem + 5vw, 2.4rem);
-}
-
-.dropdown.active {
-	display: block;
-	visibility: visible;
-	opacity: 1;
-	transform: scale(1) translateX(-0) translateY(0);
-}
-
-.submenu.active {
-	display: block;
-	visibility: visible;
-	opacity: 1;
 }
 
 .dropdown ul li {
