@@ -62,6 +62,8 @@ const openLightbox = (e) => {
 		console.log(e.target.id);
 		// currentImageIndex.value = e.target.id;
 		currentImageIndex.value = 0;
+		currentImageIndex.value = e.target.id;
+		currentImageIndex.value = parseInt(currentImageIndex.value);
 	} else {
 		currentImage.value = e.target.src;
 		currentImageIndex.value = e.target.id;

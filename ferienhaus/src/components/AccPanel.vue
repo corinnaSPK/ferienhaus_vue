@@ -1,7 +1,12 @@
 <template>
 	<div class="accordion_panel mb-3rem bbottom">
 		<div class="title mb-5em">
-			<button class="fs-copy" @click="togglePanel" :aria-expanded="panelOpen">
+			<button
+				class="fs-copy"
+				@click="togglePanel"
+				:aria-expanded="panelOpen"
+				aria-controls="content"
+			>
 				<slot name="title" />
 				<span :class="{ spanopen: panelOpen }" aria-hidden="true"> </span>
 			</button>

@@ -1,6 +1,10 @@
 <template>
 	<Transition name="gallery">
-		<div class="modal modal-container" v-show="modalOpen">
+		<div
+			class="modal modal-container"
+			v-show="modalOpen"
+			@keyup.esc="closeLightbox"
+		>
 			<button class="btn--close-modal" @click="closeLightbox" ref="close">
 				&times;
 			</button>

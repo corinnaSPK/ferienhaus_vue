@@ -3,9 +3,7 @@
 		<main class="cl-text-light">
 			<ul class="mt-10rem">
 				<h4>TOdos</h4>
-				<li>Nav links nur cliackble. wenn menu open</li>
-				<li>router view für houses aufsetzen</li>
-				<li>in nav verlinken</li>
+
 				<li>accesibility für accPanel ergänzen</li>
 				<li>slots für accPanel einrichten</li>
 				<li>FavIcon</li>
