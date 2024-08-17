@@ -1,5 +1,5 @@
 <template>
-	<div class="nav dflexrow">
+	<div class="nav dflexrow bbottom-light">
 		<button class="uppercase logo cl-text-light" @click="goHome">
 			<span>der</span>bes<br />ondere<br /><span>urlaub</span>
 		</button>
@@ -25,11 +25,6 @@
 				<Transition name="fade"
 					><div class="nav-main dropdown" v-show="showMenu">
 						<ul role="menu" class="dgridcenter">
-							<li role="menuitem">
-								<RouterLink class="dropdown-link" to="/" @click="closeNav">
-									Heimathafen
-								</RouterLink>
-							</li>
 							<li role="menuitem">
 								<button
 									aria-haspopup="true"
@@ -57,7 +52,25 @@
 									</div></Transition
 								>
 							</li>
-
+							<li role="menuitem">
+								<RouterLink class="dropdown-link" to="/kids" @click="closeNav">
+									Für die kleinen Gäste
+								</RouterLink>
+							</li>
+							<li role="menuitem">
+								<RouterLink class="dropdown-link" to="/dogs" @click="closeNav">
+									Urlaub mit Hund
+								</RouterLink>
+							</li>
+							<li role="menuitem">
+								<RouterLink
+									class="dropdown-link"
+									to="/umgebung"
+									@click="closeNav"
+								>
+									Umgebung
+								</RouterLink>
+							</li>
 							<li role="menuitem">
 								<RouterLink
 									class="dropdown-link"
@@ -65,6 +78,11 @@
 									@click="closeNav"
 								>
 									Häufige Fragen
+								</RouterLink>
+							</li>
+							<li role="menuitem">
+								<RouterLink class="dropdown-link" to="/" @click="closeNav">
+									Heimathafen
 								</RouterLink>
 							</li>
 						</ul>
@@ -131,7 +149,6 @@ const navigateToHouse = () => {
 	background-color: var(--cl-bg-nav);
 
 	justify-content: space-between;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 .nav > * {
 	margin-block: auto;

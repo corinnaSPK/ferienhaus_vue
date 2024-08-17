@@ -104,7 +104,11 @@ onMounted(() => {
 }
 .house__card {
 	margin-inline: auto;
-	width: clamp(250px, 80%, 800px);
+	width: clamp(280px, 80%, 800px);
+	border: 1px solid rgba(255, 255, 255, 0.555);
+	border: 1px solid var(--cl-bg-nav);
+	padding: 1rem;
+	box-shadow: 10px 10px var(--cl-bg-nav);
 }
 
 .house__card img {

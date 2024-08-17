@@ -1,12 +1,12 @@
 <template>
 	<div class="p-3">
-		<div class="intro_copy mb-5rem mcenter width-copy">
+		<div class="intro__copy mb-5rem mcenter width-copy">
 			<h2 class="fs-head-2 fw-lighter mb-5em">Willkommen</h2>
 			<p class="fs-copy">
 				{{ house.copylong }}
 			</p>
 		</div>
-		<ul class="intro_imgs flexwrap">
+		<ul class="intro__imgs flexwrap">
 			<li v-for="img in house.imgintro">
 				<img :src="getImageUrl(img)" alt="" srcset="" />
 			</li>
@@ -22,9 +22,12 @@ const getImageUrl = (path) => {
 </script>
 
 <style lang="css" scoped>
+.intro__imgs {
+	padding-inline: 5rem;
+}
 .flexwrap > * {
 	flex-direction: row;
-	flex: 0 1 clamp(100px, 20%, 300px);
+	flex: 0 1 clamp(100px, 20%, 250px);
 	margin: 0 auto;
 }
 img {

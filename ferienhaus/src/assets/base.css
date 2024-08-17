@@ -6,7 +6,7 @@
 	--cl-light-opa: rgb(255, 255, 255, 0.7);
 	--cl-dark: #000;
 	/* --cl-dark: red; */
-	--cl-dark-accent: hsl(240, 90%, 5%);
+	--cl-dark-footer: hsl(240, 90%, 5%);
 	--cl-dark-accent: hsl(240, 62%, 8%);
 	--cl-dark-accent: #030317;
 	--cl-dark-accent: hsl(240, 74%, 10%);
@@ -32,15 +32,26 @@
 
 /* !colors */
 
+/* ?background */
 .cl-background-dark-accent {
 	background-color: var(--cl-dark-accent);
 }
 .cl-background-dark {
-	background-color: var(--cl-dark);
+	background-color: var(--cl-dark-accent);
 }
 .cl-background-light {
 	background-color: var(--cl-light);
 }
+
+.cl-background-gradient {
+	background-image: linear-gradient(
+		to bottom,
+		var(--cl-dark-accent),
+		var(--cl-dark-footer)
+	);
+}
+/* ?text */
+
 .cl-text-light {
 	color: var(--cl-light);
 }
@@ -198,6 +209,9 @@
 /*! borders tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt */
 .bbottom {
 	border-bottom: 1px solid var(--cl-light-opa);
+}
+.bbottom-light {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 /*! component styles tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt */
 

@@ -31,6 +31,36 @@ const router = createRouter({
       component: () => import('../views/HousesView.vue')
 
     },
+    ,
+     {
+      path: '/impressum',
+      name: 'impressum',
+      // props: "true", 
+      component: () => import('../views/ImpressumView.vue')
+
+    },
+     {
+      path: '/dogs',
+      name: 'dogs',
+      // props: "true", 
+      component: () => import('../views/DogsView.vue')
+
+    },
+    {
+      path: '/kids',
+      name: 'kids',
+      // props: "true", 
+      component: () => import('../views/KidsView.vue')
+
+    },
+       {
+      path: '/umgebung',
+      name: 'umgebung',
+      // props: "true", 
+      component: () => import('../views/UmgebungView.vue')
+
+    },
+
    
  
   ], 

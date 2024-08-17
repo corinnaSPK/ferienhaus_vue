@@ -14,6 +14,7 @@ import HousesWrapperHome from "@/components/Home/HousesWrapperHome.vue";
 .houses {
 	background-image: linear-gradient(
 		to bottom,
+
 		var(--cl-bg-nav),
 		var(--cl-dark-accent) /* white */
 	);

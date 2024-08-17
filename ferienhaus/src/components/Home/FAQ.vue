@@ -1,5 +1,8 @@
 <template>
-	<section class="faq dgridcenter p-3-in cl-text-light" id="faq">
+	<section
+		class="faq dgridcenter p-3-in cl-background-gradient cl-text-light bbottom-light"
+		id="faq"
+	>
 		<div class="accordion__content">
 			<div class="accordion__wrapper fs-copy">
 				<h2 class="fs-head-2 uppercase mb-5em">FAQ</h2>
@@ -52,11 +55,6 @@ const { panelOpen } = defineProps(["panelOpen"]);
 <style lang="css" scoped>
 .faq {
 	/* padding-top: 0; */
-	background-image: linear-gradient(
-		to bottom,
-		var(--cl-dark-accent),
-		var(--cl-bg-nav)
-	);
 }
 
 .accordion__content {
