@@ -38,6 +38,12 @@ const router = createRouter({
       // props: "true", 
       component: () => import('../views/ImpressumView.vue')
 
+    }, {
+      path: '/datenschutz',
+      name: 'datenschutz',
+      // props: "true", 
+      component: () => import('../views/DatenschutzView.vue')
+
     },
      {
       path: '/dogs',

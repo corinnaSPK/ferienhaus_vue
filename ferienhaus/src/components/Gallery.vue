@@ -44,7 +44,7 @@
 import Modal from "../components/Modal.vue";
 import { ref, onMounted, watch, nextTick } from "vue";
 const { house } = defineProps(["house"]);
-// momentan loopen wir durch ein array mit einfachen strings ["abc", "def", "etc"]; wir müssern aber statt der e3infachen strings ein objekt loopen, das muss im code noch angepasst werden
+//! momentan loopen wir durch ein array mit einfachen strings ["abc", "def", "etc"]; wir müssern aber statt der e3infachen strings ein objekt loopen, das muss im code noch angepasst werden
 const images = house.imgintro;
 const btnNext = ref(null);
 const getImageUrl = (path) => {

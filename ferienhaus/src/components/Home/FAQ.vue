@@ -1,6 +1,6 @@
 <template>
 	<section
-		class="faq dgridcenter p-3-in cl-background-gradient cl-text-light bbottom-light"
+		class="faq dgridcenter p-3-in cl-background-gradient cl-text-light"
 		id="faq"
 	>
 		<div class="accordion__content">
@@ -53,10 +53,6 @@ const { panelOpen } = defineProps(["panelOpen"]);
 </script>
 
 <style lang="css" scoped>
-.faq {
-	/* padding-top: 0; */
-}
-
 .accordion__content {
 	width: clamp(90%, 70vw, 700px);
 	display: flex;

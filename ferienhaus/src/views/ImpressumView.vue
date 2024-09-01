@@ -1,26 +1,31 @@
 <template>
-	<section>
-		<h1>Impressum</h1>
-		<p>
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima dolorum
-			consequuntur veniam ullam debitis blanditiis labore, ducimus doloremque
-			tempore distinctio! Possimus est vero ullam, repellat, veniam nobis
-			accusantium et incidunt at dolorum quam optio quasi recusandae eius
-			adipisci maiores modi sunt voluptatem. Illo quidem modi voluptate
-			assumenda est. Doloremque ex, quibusdam sint beatae excepturi non
-			voluptatibus! Eius voluptate aperiam alias beatae adipisci eos facilis
-			cumque in! Rem nihil repudiandae atque? Quam quis blanditiis nam amet?
-			Autem, praesentium. Doloribus asperiores sunt incidunt velit sapiente.
-			Assumenda, laborum eveniet iusto alias unde ratione quod natus rerum,
-			autem veritatis, culpa distinctio temporibus tempora adipisci.
-		</p>
-	</section>
+	<div>
+		<main>
+			<h1>
+				Impressum
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi officia
+					dolores fugit! Consectetur temporibus ipsum neque itaque soluta
+					repellat explicabo quidem? Blanditiis pariatur laboriosam assumenda
+					neque ex corporis perferendis quisquam nisi vitae! Culpa odio fuga
+					tenetur quam a accusamus. Accusantium debitis ipsa libero minus animi
+					officia eos aspernatur vero distinctio, earum, incidunt cumque. Sed
+					non, earum dolorem magni dicta deleniti alias nesciunt culpa atque
+					modi quam distinctio assumenda necessitatibus dolore, dolor, itaque
+					officia expedita consequuntur laudantium voluptatibus sint? Dolor
+					animi exercitationem mollitia adipisci, praesentium totam dolore odit
+					qui! Dolorum blanditiis in laudantium cupiditate veritatis sapiente
+					perspiciatis, laborum illo odit minus.
+				</p>
+			</h1>
+		</main>
+	</div>
 </template>
 
 <script setup></script>
 
 <style lang="css" scoped>
-section {
+main {
 	padding: 10rem;
 	min-height: 60vh;
 }

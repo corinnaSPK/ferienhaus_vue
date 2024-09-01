@@ -1,20 +1,13 @@
 @import "./base.css";
 #app {
-	max-width: 1280px;
+	/* max-width: 1280px; */
 	font-weight: normal;
-	min-height: 100vh;
 	background-color: var(--cl-dark-accent);
-	/* background-image: linear-gradient(
-		to right,
-		var(--cl-dark-accent),
-		var(--cl-dark-accent) 70%,
-		var(--cl-dark-accent-2) 70%,
-		var(--cl-dark-accent-2)
-	); */
+
 	min-width: 100%;
 	min-height: 100vh;
-	display: grid;
-	grid-template-rows: auto 1fr auto;
+	/* display: grid;
+	grid-template-rows: auto 1fr auto; */
 }
 
 a {

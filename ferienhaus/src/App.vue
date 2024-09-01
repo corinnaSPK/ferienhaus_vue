@@ -17,7 +17,6 @@ import Footer from "./components/Footer.vue";
 			<Component :is="Component" :key="$route.params.path"></Component>
 		</Transition>
 	</RouterView> -->
-
 	<Footer></Footer>
 </template>
 

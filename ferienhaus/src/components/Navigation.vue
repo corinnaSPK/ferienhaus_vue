@@ -1,5 +1,5 @@
 <template>
-	<div class="nav dflexrow bbottom-light">
+	<div class="nav dflexrow">
 		<button class="uppercase logo cl-text-light" @click="goHome">
 			<span>der</span>bes<br />ondere<br /><span>urlaub</span>
 		</button>
@@ -85,6 +85,11 @@
 									Heimathafen
 								</RouterLink>
 							</li>
+							<li role="menuitem">
+								<RouterLink class="dropdown-link" to="/" @click="closeNav">
+									nav = 85px height
+								</RouterLink>
+							</li>
 						</ul>
 					</div></Transition
 				>
@@ -154,53 +159,13 @@ const navigateToHouse = () => {
 	margin-block: auto;
 }
 
-.nav-link {
-	font-weight: 500;
-	padding: 0.3rem;
-}
-/* .menu div:not(.submenu) li:hover a:not(.sublink),
-.nav-button:hover {
-	border-bottom: 1.2px solid white;
-	display: block;
-}
- */
-.submenu a {
-	border-bottom: 1px solid transparent;
-	width: fit-content;
-}
-/* .submenu a:hover {
-	border-bottom: 1px solid white;
-} */
-
-.menu a:hover,
-.nav-button:hover {
-	border-bottom: 1px solid white;
-}
-.nav-button {
-	font-size: inherit;
-	color: inherit;
-	background-color: transparent;
-	border: none;
-}
-.nav-button span {
-	display: inline-block;
-	width: 1rem;
-	height: 1rem;
-	aspect-ratio: 1;
-	border-right: 1px solid var(--cl-light);
-	border-bottom: 1px solid var(--cl-light);
-	margin-left: 1rem;
-	rotate: 45deg;
-
-	transform: translateY(-50%);
-	transition: all 1s ease;
-}
-
+/* open triangle for submenu */
 .nav-button .spanopen {
 	rotate: 225deg;
 	translate: 1rem -50%;
 	transition: all 1s ease;
 }
+/* Dropdown styles */
 .dropdown {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 	border-left: 1px solid rgba(255, 255, 255, 0.4);
@@ -247,6 +212,49 @@ const navigateToHouse = () => {
 	border-bottom: 1px solid transparent;
 	width: clamp(250px, 50%, 90%);
 	padding-bottom: 0.3em;
+}
+/* Link styles */
+.nav-link {
+	font-weight: 500;
+	padding: 0.3rem;
+}
+
+.nav-button {
+	font-size: inherit;
+	color: inherit;
+	background-color: transparent;
+	border: none;
+}
+.nav-button span {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	aspect-ratio: 1;
+	border-right: 1px solid var(--cl-light);
+	border-bottom: 1px solid var(--cl-light);
+	margin-left: 1rem;
+	rotate: 45deg;
+
+	transform: translateY(-50%);
+	transition: all 1s ease;
+}
+
+.submenu a {
+	border-bottom: 1px solid transparent;
+	width: fit-content;
+}
+
+.menu a:hover,
+.nav-button:hover {
+	border-bottom: 1px solid white;
+}
+
+.nav a,
+.nav-button {
+	color: rgba(255, 255, 255, 0.563);
+}
+.nav .router-link-active {
+	color: white;
 }
 
 /* open button */
@@ -332,6 +340,7 @@ const navigateToHouse = () => {
 
 .btn--cta {
 	align-self: center;
+	margin-right: 4rem;
 }
 .btn--cta a {
 	color: var(--cl-dark-accent);

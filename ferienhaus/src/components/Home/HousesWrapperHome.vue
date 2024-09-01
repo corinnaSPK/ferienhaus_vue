@@ -1,6 +1,10 @@
 <template>
 	<div class="dgridcenter house__wrapper text-center" ref="houseWrapper">
-		<div v-for="house in houses" :key="`house-${house.id}`" class="house__card">
+		<div
+			v-for="house in houses"
+			:key="`house-${house.id}`"
+			class="house__card cl-background-ligth-accent"
+		>
 			<img :src="getImageUrl(house.imgmain)" alt="" />
 			<div class="card-main p-3">
 				<h3 class="fs-head-3 space-1">{{ house.name }}</h3>
@@ -102,13 +106,18 @@ onMounted(() => {
 .house__wrapper {
 	gap: 6rem;
 }
+
 .house__card {
 	margin-inline: auto;
 	width: clamp(280px, 80%, 800px);
-	border: 1px solid rgba(255, 255, 255, 0.555);
-	border: 1px solid var(--cl-bg-nav);
-	padding: 1rem;
-	box-shadow: 10px 10px var(--cl-bg-nav);
+	/* border: 1px solid rgba(255, 255, 255, 0.555); */
+	/* border: 1px solid var(--cl-bg-nav); */
+	padding: 3rem;
+	border-radius: 5px;
+	/* background-color: hsl(240, 74%, 13%); */
+	/* box-shadow: 3px 3px 300px #171717; */
+	/* box-shadow: 5px 5px 300px rgba(255, 255, 255, 0.3); */
+	/* box-shadow: 10px 10px var(--cl-bg-nav); */
 }
 
 .house__card img {
@@ -147,7 +156,7 @@ h3::after {
 	margin: 0.85rem auto;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
 	.house__card:nth-child(even) {
 		display: flex;
 		flex-direction: row;

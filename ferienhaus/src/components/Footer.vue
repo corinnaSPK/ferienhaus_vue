@@ -15,12 +15,23 @@ import { RouterLink } from "vue-router";
 
 <style lang="css" scoped>
 .footer {
-	background-color: var(--cl-dark-footer);
+	background-color: rgb(5, 1, 15);
+	padding: 2rem;
+	/* border-top: 1px solid black; */
 }
 ul {
 	font-size: 3rem;
 }
 ul li {
 	margin-bottom: 2rem;
+}
+a {
+	font-size: 2rem;
+	border-bottom: 1px solid transparent;
+	padding-bottom: 4px;
+}
+a:hover,
+a:focus {
+	border-bottom: 1px solid var(--cl-light-opa);
 }
 </style>
