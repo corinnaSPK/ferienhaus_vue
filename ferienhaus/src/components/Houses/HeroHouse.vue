@@ -1,7 +1,6 @@
 <template>
 	<div class="house_hero">
 		<div class="right">
-			<!-- <img :src="`../src/assets/img/${house.imgmain}`" alt="" srcset="" /> -->
 			<img :src="getImageUrl(house.imgmain)" alt="" srcset="" />
 		</div>
 		<div class="left dgridcenter cl-text-dark-accent fs-head-main p-3">

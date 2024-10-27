@@ -2,7 +2,7 @@
 	<section class="testimonials cl-background-light">
 		<svg aria-hidden="true" role="img" class="svg-top" viewBox="0 0 1440 320">
 			<path
-				fill="hsl(240, 74%, 10%)"
+				fill="hsla(240, 52%, 10%)"
 				fill-opacity="1"
 				d="M0,96L80,101.3C160,107,320,117,480,144C640,171,800,213,960,224C1120,235,1280,213,1360,202.7L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
 			></path>
@@ -40,7 +40,7 @@
 			viewBox="0 0 1440 320"
 		>
 			<path
-				fill="hsl(240, 74%, 10%)"
+				fill="hsla(240, 52%, 10%)"
 				fill-opacity="1"
 				d="M0,96L80,101.3C160,107,320,117,480,144C640,171,800,213,960,224C1120,235,1280,213,1360,202.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
 			></path>
@@ -70,7 +70,8 @@
 }
 .testi::after {
 	content: "”";
-	color: var(--cl-dark-accent-opa);
+	/* color: var(--cl-dark-accent-opa); */
+	color: rgba(128, 128, 128, 0.305);
 	position: absolute;
 	top: -1rem;
 	left: 0;

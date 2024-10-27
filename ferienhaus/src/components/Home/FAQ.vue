@@ -5,7 +5,7 @@
 	>
 		<div class="accordion__content">
 			<div class="accordion__wrapper fs-copy">
-				<h2 class="fs-head-2 uppercase mb-5em">FAQ</h2>
+				<h2 class="fs-head-2 uppercase mb-5em ff-serif">FAQ</h2>
 				<p class="fs-copy mb-5em">
 					Lorem ipsum, dolor Lorem ipsum dolor sit amet consectetur adipisicing
 					elit. Labore, sequi? sit amet consectetur adipisicing elit. Illum,

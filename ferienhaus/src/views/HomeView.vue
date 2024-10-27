@@ -1,14 +1,6 @@
 <template>
 	<div>
 		<main class="cl-text-light">
-			<ul class="mt-10rem">
-				<h4>TOdos</h4>
-
-				<li>accesibility für accPanel ergänzen</li>
-				<li>slots für accPanel einrichten</li>
-				<li>FavIcon</li>
-				<li>vuetify und prime deinstallieren</li>
-			</ul>
 			<HeroHome></HeroHome>
 			<IntroHome></IntroHome>
 			<Book></Book>
@@ -30,6 +22,6 @@ import FAQ from "@/components/Home/FAQ.vue";
 </script>
 <style>
 .main_wrapper {
-	padding-inline: 3rem;
+	/* padding-inline: 3rem; */
 }
 </style>

@@ -2,11 +2,11 @@
 	<section class="zitat mb1">
 		<div class="zitat__wrapper">
 			<div class="zitat__text">
-				<h2 class="fs-copy ff-sansserif uppercase space-3">
+				<h2 class="fs-head-main space-3 mb-3rem ff-serif">
 					Wie anziehend, wie fesselnd sind doch Meer und Strand! Wie verliert
 					man sich in ihrer Einfachheit, ja, in ihrer Leere!
 				</h2>
-				<p class="fs-copy-small">Walt Whitman</p>
+				<p class="fs-copy">Walt Whitman</p>
 			</div>
 		</div>
 	</section>
@@ -17,6 +17,8 @@
 <style lang="css" scoped>
 .zitat {
 	padding-block: 0;
+	font-family: "Playfair Display", serif;
+	font-family: "Nunito", sans-serif;
 }
 .zitat__wrapper {
 	display: grid;
@@ -38,7 +40,6 @@
 	display: grid;
 	place-content: center;
 	height: 100%;
-	font-weight: 100;
 	background-image: linear-gradient(
 			to left,
 			rgba(253, 249, 249, 0.513),
@@ -52,6 +53,10 @@
 }
 .zitat__wrapper h2 {
 	width: clamp(150px, 400px, 75%);
-	margin: 0 auto;
+	margin-inline: auto;
+	font-weight: 600;
+}
+p {
+	font-weight: 600;
 }
 </style>

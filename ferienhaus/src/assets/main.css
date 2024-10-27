@@ -5,9 +5,11 @@
 	background-color: var(--cl-dark-accent);
 
 	min-width: 100%;
-	min-height: 100vh;
+	min-height: 100%;
 	/* display: grid;
 	grid-template-rows: auto 1fr auto; */
+	display: flex;
+	flex-direction: column;
 }
 
 a {

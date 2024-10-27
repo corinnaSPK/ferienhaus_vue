@@ -1,5 +1,5 @@
 <template>
-	<div class="accordion_panel mb-3rem bbottom">
+	<div class="accordion__panel mb-3rem bbottom">
 		<div class="title mb-5em">
 			<button
 				class="fs-copy"
@@ -7,8 +7,8 @@
 				:aria-expanded="panelOpen"
 				aria-controls="content"
 			>
-				<slot name="title" />
 				<span :class="{ spanopen: panelOpen }" aria-hidden="true"> </span>
+				<slot name="title" />
 			</button>
 		</div>
 		<Transition name="fade">
@@ -29,11 +29,15 @@ const togglePanel = () => {
 </script>
 
 <style lang="css" scoped>
+.accordion__panel {
+	font-weight: 200;
+}
 button {
 	border: none;
 	background-color: transparent;
 	color: inherit;
 	text-align: left;
+	font-weight: 200;
 }
 button:hover {
 	cursor: pointer;
@@ -51,7 +55,7 @@ span {
 	aspect-ratio: 1;
 	border-right: 1px solid var(--cl-light);
 	border-bottom: 1px solid var(--cl-light);
-	margin-left: 1rem;
+	margin-right: 2rem;
 	rotate: 45deg;
 
 	transform: translateY(-50%);

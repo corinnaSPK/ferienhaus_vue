@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<HeroHouse :house="house"></HeroHouse>
+		<SwiperGallery></SwiperGallery>
+		<!-- <HeroHouse :house="house"></HeroHouse> -->
 		<HeroIntro :house="house"></HeroIntro>
 		<HousesDetails :house="house"></HousesDetails>
 	</div>
@@ -8,6 +9,7 @@
 
 <script setup>
 import HeroHouse from "../components/Houses/HeroHouse.vue";
+import SwiperGallery from "../components/SwiperGallery.vue";
 import HeroIntro from "../components/Houses/HeroIntro.vue";
 import HousesDetails from "../components/Houses/HousesDetails.vue";
 
@@ -32,7 +34,7 @@ watch(
 
 <style lang="css" scoped>
 div {
-	margin-top: 100px;
+	/* padding-top: 100px; */
 	/* min-height: 90vh; */
 }
 </style>

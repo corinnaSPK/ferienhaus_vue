@@ -1,10 +1,12 @@
 <template>
-	<div class="houses__intro mb-5rem talign-center mcenter">
-		<h2 class="fs-head-2 fw-lighter mb-5em">Willkommen in Schönhagen</h2>
+	<div class="houses__intro talign-center mb-5rem">
+		<h2 class="fs-head-2 ff-serif mb-5rem uppercase">
+			Willkommen in Schönhagen
+		</h2>
 
-		<div class="intro__wrapper fs-copy">
-			<div class=" ">
-				<p class="houses__intro-copy fs-copy">
+		<div class="flex__wrapper">
+			<div class="intro__wrapper fs-copy">
+				<p class="houses__intro-copy fs-copy mb-3rem">
 					Alle unsere Häuser sind modern und stilvoll eingerichtet, behalten
 					jedoch stets ihren individuellen Charme. Die Häuser werden von uns
 					laufend modernisiert und renoviert. Auch Ihre vierbeinigen Freunde
@@ -13,100 +15,100 @@
 					und Futternapf.
 				</p>
 			</div>
-		</div>
-		<div class="intro__list fs-copy">
-			<ul>
-				<li class="mb-1em">
-					<svg
-						aria-hidden="true"
-						role="img"
-						xmlns="http://www.w3.org/2000/svg"
-						height="16"
-						width="14"
-						viewBox="0 0 448 512"
-					>
-						<path
-							d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-						/>
-					</svg>
-					<p>W-Lan und TV in allen Unterkünften</p>
-				</li>
-				<li class="mb-1em">
-					<svg
-						aria-hidden="true"
-						role="img"
-						xmlns="http://www.w3.org/2000/svg"
-						height="16"
-						width="14"
-						viewBox="0 0 448 512"
-					>
-						<path
-							d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-						/>
-					</svg>
-					<p>Alle Grundstücke eingezäunt</p>
-				</li>
-				<li class="mb-1em">
-					<svg
-						aria-hidden="true"
-						role="img"
-						xmlns="http://www.w3.org/2000/svg"
-						height="16"
-						width="14"
-						viewBox="0 0 448 512"
-					>
-						<path
-							d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-						/>
-					</svg>
-					<p>Sauna oder Infrarotkabine vorhanden (außer in Strandglück)</p>
-				</li>
-				<li class="mb-1em">
-					<svg
-						aria-hidden="true"
-						role="img"
-						xmlns="http://www.w3.org/2000/svg"
-						height="16"
-						width="14"
-						viewBox="0 0 448 512"
-					>
-						<path
-							d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-						/>
-					</svg>
-					<p>Alle Unterkünfte mit Kamin</p>
-				</li>
-				<li class="mb-1em">
-					<svg
-						aria-hidden="true"
-						role="img"
-						xmlns="http://www.w3.org/2000/svg"
-						height="16"
-						width="14"
-						viewBox="0 0 448 512"
-					>
-						<path
-							d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-						/>
-					</svg>
-					<p>Wäsche- und Handtuchpaket optional zubuchbar</p>
-				</li>
-				<li class="mb-1em">
-					<svg
-						aria-hidden="true"
-						role="img"
-						xmlns="http://www.w3.org/2000/svg"
-						height="16"
-						width="14"
-						viewBox="0 0 448 512"
-					>
-						<path
-							d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-						/>
-					</svg>
-					<p>Strand fußläufig erreichbar</p>
-				</li>
-			</ul>
+			<div class="intro__list fs-copy">
+				<ul>
+					<li class="mb-1em">
+						<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg>
+						<p>W-Lan und TV in allen Unterkünften</p>
+					</li>
+					<li class="mb-1em">
+						<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg>
+						<p>Alle Grundstücke eingezäunt</p>
+					</li>
+					<li class="mb-1em">
+						<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg>
+						<p>Sauna oder Infrarotkabine vorhanden (außer in Strandglück)</p>
+					</li>
+					<li class="mb-1em">
+						<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg>
+						<p>Alle Unterkünfte mit Kamin</p>
+					</li>
+					<li class="mb-1em">
+						<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg>
+						<p>Wäsche- und Handtuchpaket optional zubuchbar</p>
+					</li>
+					<li>
+						<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg>
+						<p>Strand fußläufig erreichbar</p>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </template>
@@ -115,7 +117,16 @@
 
 <style lang="css" scoped>
 .houses__intro {
-	max-width: 60vw;
+	/* max-width: 60vw; */
+	padding-block: 15rem;
+	padding-inline: 3vw;
+	background-color: var(--cl-dark-accent-opa);
+	background-image: linear-gradient(
+		to bottom,
+		var(--cl-dark-accent-opa),
+		var(--cl-bg-nav),
+		var(--cl-dark-accent)
+	);
 }
 .houses svg {
 	fill: white;
@@ -124,12 +135,14 @@
 	display: grid;
 	place-content: center;
 	padding: 2rem;
+	/* background-color: var(--cl-dark-accent-opa); */
 }
 .intro__list svg {
 	margin-right: 1rem;
 }
-.intro__wrapper {
+.flex__wrapper {
 	display: flex;
+	flex-direction: column;
 	gap: 5rem;
 }
 .intro__wrapper img {
@@ -145,9 +158,18 @@
 li p {
 	display: inline;
 }
-@media (max-width: 65rem) {
+
+@media screen and (min-width: 800px) {
+	.flex__wrapper {
+		flex-direction: row;
+	}
+
+	.flex__wrapper > * {
+		flex: 1;
+	}
 	.intro__wrapper {
-		flex-direction: column;
+		display: grid;
+		place-content: center;
 	}
 }
 .houses__wrapper {

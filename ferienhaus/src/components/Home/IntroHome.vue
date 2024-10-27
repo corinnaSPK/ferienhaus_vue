@@ -1,7 +1,7 @@
 <template>
-	<section class="intro dgridcenter p-3-in mb1" id="about">
+	<section class="intro dgridcenter" id="about">
 		<div class="text__box mb-5rem width-copy">
-			<h2 class="intro__box-head fs-head-2 fw-lighter mb-5em">
+			<h2 class="intro__box-head fs-head-2 mb-5em ff-serif uppercase">
 				Urlaubsreif? Hier beginnt Ihr Traumurlaub!
 			</h2>
 
@@ -21,7 +21,7 @@
 				wird.
 			</p>
 		</div>
-		<div class="photo__box mb-5rem">
+		<div class="photo__box">
 			<ul class="flexwrap">
 				<li class="">
 					<img
@@ -64,7 +64,6 @@
 	padding-bottom: 0;
 	overflow: hidden;
 }
-
 .text__box {
 	margin: 0 auto 5rem;
 	position: relative;
@@ -84,6 +83,8 @@
 
 .photo__box {
 	position: relative;
+
+	/* padding-top: 5rem; */
 }
 
 .flexwrap > * {

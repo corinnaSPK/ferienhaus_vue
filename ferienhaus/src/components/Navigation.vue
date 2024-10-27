@@ -152,6 +152,7 @@ const navigateToHouse = () => {
 	position: fixed;
 	/* height: 50px; */
 	background-color: var(--cl-bg-nav);
+	/* background-color: rgba(16, 9, 43, 0.03); */
 
 	justify-content: space-between;
 }
@@ -167,8 +168,8 @@ const navigateToHouse = () => {
 }
 /* Dropdown styles */
 .dropdown {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-	border-left: 1px solid rgba(255, 255, 255, 0.4);
+	/* border-bottom: 1px solid rgba(255, 255, 255, 0.4); */
+	/* border-left: 1px solid rgba(255, 255, 255, 0.4); */
 	/* display: none; */
 	flex-direction: column;
 	width: 95%;
@@ -181,7 +182,7 @@ const navigateToHouse = () => {
 	visibility: visible;
 	/* transform: scale(0.97) translateX(50px) translateY(-10px); */
 	/* transition: 0.8s ease-in-out; */
-	border-bottom-left-radius: 50px;
+	/* border-bottom-left-radius: 50px; */
 
 	background-image: linear-gradient(
 		to bottom,

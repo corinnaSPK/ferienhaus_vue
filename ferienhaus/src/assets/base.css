@@ -1,18 +1,24 @@
 :root {
 	--ff-sansserif: Arial, Helvetica, sans-serif;
-	--ff-serif: Georgia, "Times New Roman", Times, serif;
+	--ff-sansserif: "Nunito", sans-serif;
+	--ff-serif: "Playfair Display", serif;
 	/* !colors #################################### */
 	--cl-light: #fff;
+	--cl-white-soft: #f8f8f8;
+	--cl-white-mute: #f2f2f2;
 	--cl-light-opa: rgb(255, 255, 255, 0.7);
 	--cl-dark: #000;
 	/* --cl-dark: red; */
 	--cl-dark-footer: hsl(240, 90%, 5%);
+	--cl-dark-footer: hsl(240, 10%, 2%);
 	--cl-dark-accent: hsl(240, 62%, 8%);
 	--cl-dark-accent: #030317;
 	--cl-dark-accent: hsl(240, 75%, 9%);
 	--cl-dark-accent: #07072c;
+	--cl-dark-accent: hsla(240, 52%, 10%);
 	--cl-dark-accent-2: #040128;
 	--cl-dark-accent-opa: rgba(13, 13, 47, 0.55);
+	--cl-dark-accent-opa: rgba(22, 22, 63, 0.55);
 	--cl-dark-hover: rgb(16, 16, 51);
 	--cl-dark-hover: #080821;
 	--cl-light-accent: hsl(240, 74%, 13%);
@@ -38,11 +44,12 @@
 .cl-background-dark-accent {
 	background-color: var(--cl-dark-accent);
 }
-.cl-background-dark {
-	background-color: var(--cl-dark-accent);
+.cl-background-nav {
+	background-color: var(--cl-bg-nav);
 }
 .cl-background-light {
 	background-color: var(--cl-light);
+	background-color: var(--cl-white-soft);
 }
 .cl-background-ligth-accent {
 	background-color: var(--cl-light-accent);
@@ -58,6 +65,7 @@
 
 .cl-text-light {
 	color: var(--cl-light);
+	color: var(--cl-white-soft);
 }
 .cl-text-dark {
 	color: var(--cl-dark);
@@ -245,30 +253,37 @@
 }
 html {
 	font-size: 62.5%;
+	/* min-height: 100vh; */
 }
 body {
 	overflow-x: hidden;
-	/* min-height: 100vh;
-	width: 100vw;
-	max-width: 100%; */
-	line-height: 1.5;
+	height: 100vh;
+	/* width: 100vw; */
+	/* max-width: 100%; */
+	line-height: 1.7;
 	font-family: var(--ff-sansserif);
-	/* font-family: Georgia, 'Times New Roman', Times, serif; */
-	display: grid;
-	grid-template-rows: auto 1fr auto;
+	/* border: 3px solid yellowgreen; */
+
 	color: var(--cl-light);
+}
+.footer {
+	/* 	grid-row-start: 2;
+	grid-row-end: 3; */
+	margin-top: auto;
 }
 img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	border: 1px solid var(--cl-light);
+	/* border: 1px solid var(--cl-light); */
 }
 
 ul {
 	list-style-type: none;
 }
-
+* {
+	/* border: 1px solid green; */
+}
 section {
 	/* scroll-padding-top: 5rem;  */
 
@@ -276,6 +291,18 @@ section {
 	padding: 150px 0;
 }
 
+h2,
+h3 {
+	font-weight: 400;
+}
+p {
+	font-weight: 200;
+}
+
+button {
+	font-family: var(--ff-sansserif);
+	letter-spacing: 1px;
+}
 /* !toggle span accordioon or menu 
 
 /* !default styles from vue color palette from <https://github.com/vuejs/theme>

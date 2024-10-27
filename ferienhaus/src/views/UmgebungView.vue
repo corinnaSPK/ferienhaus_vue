@@ -32,7 +32,7 @@
 
 <style lang="css" scoped>
 .umgebung {
-	margin-top: 85px;
+	pading-top: 85px;
 }
 .hero {
 	/* max-width: 700px; */

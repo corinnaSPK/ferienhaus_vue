@@ -1,8 +1,8 @@
 <template>
 	<header class="hero mb1" id="mainhero">
-		<!-- <div class="hero__box dgridcenter p-3">
+		<div class="hero__box dgridcenter p-3">
 			<div class="hero__box_text dgridcenter">
-				<h1 class="fs-head-main ff-sansserif uppercase space-3 mb-5em">
+				<h1 class="fs-head-main ff-serif uppercase space-3 mb-5em">
 					Der <br />besondere <br />
 					Urlaub
 				</h1>
@@ -10,7 +10,7 @@
 					Genießen Sie die schönste Zeit des Jahres in unseren exklusiven
 					Unterkünften
 				</p>
-				<p class="fs-copy">
+				<p class="fs-small">
 					<span
 						><svg
 							aria-hidden="true"
@@ -31,7 +31,7 @@
 					</span>
 					abc@gmx.de
 				</p>
-				<p class="fs-copy">
+				<p class="fs-small">
 					<span
 						><svg
 							aria-hidden="true"
@@ -49,8 +49,8 @@
 					0175/123456789
 				</p>
 			</div>
-		</div> -->
-		<div class="grid">
+		</div>
+		<!-- <div class="grid">
 			<div class="img__wrapper">
 				<img src="../../assets/img/duenen_1.jpg" alt="" srcset="" />
 			</div>
@@ -102,7 +102,7 @@
 					0175/123456789
 				</p>
 			</div>
-		</div>
+		</div> -->
 	</header>
 </template>
 
@@ -113,6 +113,7 @@
 	padding: 2rem;
 	/* min-height: 90dvh; */
 	/* background-color: yellow; */
+	margin-top: 85px;
 }
 .grid {
 	/* background-color: red; */
@@ -155,42 +156,48 @@
 }
 
 .hero svg {
-	fill: var(--cl-dark-accent);
+	fill: var(--cl-dark-accent-opa);
 }
 .hero span {
 	margin-right: 1.5rem;
 }
 .hero__box {
 	min-height: 100vh;
-	background-image: linear-gradient(
+	background-image: /* linear-gradient(
 			rgba(255, 255, 255, 0.5),
 			rgba(255, 255, 255, 0.5)
-		),
-		url(../../assets/img/duenen_1.jpg);
+		), */ url(../../assets/img/duenen_1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom;
 }
 
 .hero__box_text {
-	padding: 2rem;
+	padding: clamp(2rem, 5rem, 10rem);
+	/* font-weight: 700; */
 	color: var(--cl-dark-accent-opa);
-	background-color: rgba(255, 255, 255, 0.8);
-	border: 1px solid white;
+	background-color: rgba(255, 255, 255, 0.4);
+
+	/* filter: blur(1000px); */
+	backdrop-filter: blur(10px);
+	/* border: 1px solid red; */
+	/* border-radius: 5px; */
 }
 .hero__box_text h1 {
 	line-height: 1.2;
-	font-weight: lighter;
+	font-weight: 400;
+	/* font-weight: lighter; */
+}
+.hero__box_text p {
+	font-weight: 400;
+	color: var(--cl-dark-accent-opa);
 }
 .hero__box_text h1::after {
 	content: "";
 	display: block;
 	width: 50%;
 	height: 1px;
-	background-color: var(--cl-dark-accent);
+	background-color: var(--cl-dark-accent-opa);
 	margin-top: 10px;
-}
-.hero__box_text h3 {
-	font-weight: lighter;
 }
 </style>

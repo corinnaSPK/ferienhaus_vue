@@ -15,9 +15,9 @@ import { RouterLink } from "vue-router";
 
 <style lang="css" scoped>
 .footer {
-	background-color: rgb(5, 1, 15);
+	background-color: var(--cl-dark-footer);
 	padding: 2rem;
-	/* border-top: 1px solid black; */
+	border-top: 1px solid rgb(46, 46, 46);
 }
 ul {
 	font-size: 3rem;

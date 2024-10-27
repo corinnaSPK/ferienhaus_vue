@@ -1,5 +1,5 @@
 <template>
-	<section class="houses p-3-in mb1" id="houses">
+	<section class="houses mb1" id="houses">
 		<HousesIntroHome></HousesIntroHome>
 		<HousesWrapperHome></HousesWrapperHome>
 	</section>
@@ -10,4 +10,9 @@ import HousesIntroHome from "@/components/Home/HousesIntroHome.vue";
 import HousesWrapperHome from "@/components/Home/HousesWrapperHome.vue";
 </script>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+.houses {
+	margin-top: 0;
+	padding-top: 0;
+}
+</style>
