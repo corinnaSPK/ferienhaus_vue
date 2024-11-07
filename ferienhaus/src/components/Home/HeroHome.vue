@@ -111,6 +111,7 @@
 <style lang="css" scoped>
 .hero {
 	padding: 2rem;
+	padding-top: 10rem;
 	/* min-height: 90dvh; */
 	/* background-color: yellow; */
 	margin-top: 85px;

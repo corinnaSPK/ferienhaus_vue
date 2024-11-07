@@ -159,6 +159,7 @@ swiper-container::part(button-next) {
 .gallery {
 	/* border: 3px solid red; */
 	width: 90vw;
+	padding-top: 120px;
 }
 @media screen and (min-width: 800px) {
 	.gallery {

@@ -89,6 +89,92 @@
 					</button>
 				</div>
 			</div>
+
+			<div
+				v-for="house in houses"
+				:key="`house-${house.id}`"
+				class="house__card"
+			>
+				<div class="img__wrapper">
+					<img :src="getImageUrl(house.imgmain)" alt="" />
+				</div>
+				<div class="card__main p-3-in">
+					<h3 class="house__name fs-head-3 space-1 mb-3rem ff-serif">
+						{{ house.name }}
+					</h3>
+					<ul class="fs-copy mb-3rem">
+						<li>
+							<!-- 	<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg> -->
+							{{ house.pers }} Personen
+						</li>
+						<li>|</li>
+						<li>
+							<!-- 	<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg> -->
+							{{ house.sz }} SZ
+						</li>
+						<li>|</li>
+
+						<li>
+							<!-- 						<svg
+							aria-hidden="true"
+							role="img"
+							xmlns="http://www.w3.org/2000/svg"
+							height="16"
+							width="14"
+							viewBox="0 0 448 512"
+						>
+							<path
+								d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+							/>
+						</svg> -->
+							{{ house.groeße }} m&sup2;
+						</li>
+					</ul>
+					<!-- <p class="fs-copy mb-3rem">
+						{{ house.copyshort }}
+					</p> -->
+
+					<!-- <RouterLink
+					:to="`/house/${house.path}`"
+					class="fs-copy uppercase cl-text-dark-accent mt-10rem"
+				>
+					Mehr erfahren
+				</RouterLink> -->
+
+					<button
+						class="fs-copy uppercase cl-text-dark-accent btn--cta mb-5rem"
+						@click="
+							() => {
+								router.push(`/house/${house.path}`);
+							}
+						"
+					>
+						Entdecken
+					</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -126,7 +212,7 @@ onMounted(() => {
 
 .house__card {
 	margin-inline: auto;
-	width: clamp(280px, 80%, 400px);
+	width: clamp(280px, 80%, 300px);
 	/* border: 1px solid rgba(255, 255, 255, 0.555); */
 	/* border: 1px solid var(--cl-bg-nav); */
 	/* padding: 3rem; */
@@ -145,6 +231,7 @@ onMounted(() => {
 		/* red 2%, */ var(--cl-dark-accent-opa),
 		hsla(240, 50%, 13%, 0.673)
 	);
+	box-shadow: 0px 0px 100px rgb(88, 88, 159);
 }
 
 .house__card img {
@@ -157,6 +244,17 @@ onMounted(() => {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	/* box-shadow: 0px 0px 70px rgb(88, 88, 159); */
+	/* border-radius: 50px; */
+	/* clip-path: ellipse(49% 31% at 50% 50%); */
+	/* background-image: radial-gradient(transparent, red); */
+	position: relative;
+}
+.house__card img::after {
+	content: "";
+	width: 10px;
+	height: 10px;
+	background: teal;
 }
 
 svg {
@@ -202,5 +300,8 @@ ul {
 		flex-wrap: wrap;
 		padding-inline: 20rem;
 	}
+}
+button {
+	/* border-radius: 50px; */
 }
 </style>

@@ -8,11 +8,11 @@ usefadeInLeftChildren(target) {
 	gsap.from(target.children,
   {
     scrollTrigger: target,
-    x: "-100%",
+    y: "100%",
     ease: "back.out(1.5)",
     opacity: 0,
-    duration: 1.2,
-    stagger: .1,
+    duration: 2.2,
+    stagger: .5,
   }
 );
 }

@@ -2,13 +2,13 @@
 	<div class="accordion__panel mb-3rem bbottom">
 		<div class="title mb-5em">
 			<button
-				class="fs-copy"
+				class="fs-copy dflexrow"
 				@click="togglePanel"
 				:aria-expanded="panelOpen"
 				aria-controls="content"
 			>
-				<span :class="{ spanopen: panelOpen }" aria-hidden="true"> </span>
 				<slot name="title" />
+				<span :class="{ spanopen: panelOpen }" aria-hidden="true"> </span>
 			</button>
 		</div>
 		<Transition name="fade">
@@ -33,11 +33,14 @@ const togglePanel = () => {
 	font-weight: 200;
 }
 button {
+	/* display: block; */
+	width: 100%;
 	border: none;
 	background-color: transparent;
 	color: inherit;
 	text-align: left;
 	font-weight: 200;
+	justify-content: space-between;
 }
 button:hover {
 	cursor: pointer;

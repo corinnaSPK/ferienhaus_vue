@@ -1,100 +1,99 @@
 <template>
 	<div class="nav dflexrow">
-		<button class="uppercase logo cl-text-light" @click="goHome">
-			<span>der</span>bes<br />ondere<br /><span>urlaub</span>
-		</button>
-		<div class="nav-right dflexrow">
-			<button class="uppercase btn--cta" @click="goBooking">buchen</button>
-			<div class="menu">
-				<button
-					aria-controls="nav-main"
-					aria-haspopup="true"
-					:aria-expanded="showMenu"
-					aria-label="browse"
-					@click="toggleNav"
-					class="mobile-nav-toggle"
-					data-mobile-nav-toggle
-					ref="toggleMenu"
-				>
-					<div class="menu-box open">
-						<span class="a" :class="{ close: showMenu }"></span>
-						<span class="b" :class="{ close: showMenu }"></span>
-						<span class="c" :class="{ close: showMenu }"></span>
-					</div>
-				</button>
-				<Transition name="fade"
-					><div class="nav-main dropdown" v-show="showMenu">
-						<ul role="menu" class="dgridcenter">
-							<li role="menuitem">
-								<button
-									aria-haspopup="true"
-									:aria-expanded="showSub"
-									aria-label="browse"
-									@click="toggleSub"
-									class="nav-button"
-								>
-									Unterkünfte
-									<span :class="{ spanopen: showSub }"></span>
-								</button>
+		<div class="menu">
+			<button
+				aria-controls="nav-main"
+				aria-haspopup="true"
+				:aria-expanded="showMenu"
+				aria-label="browse"
+				@click="toggleNav"
+				class="mobile-nav-toggle"
+				data-mobile-nav-toggle
+				ref="toggleMenu"
+			>
+				<div class="menu-box open">
+					<span class="a" :class="{ close: showMenu }"></span>
+					<span class="b" :class="{ close: showMenu }"></span>
+					<span class="c" :class="{ close: showMenu }"></span>
+				</div>
+			</button>
+			<Transition name="fade"
+				><div class="nav-main dropdown" v-show="showMenu">
+					<ul role="menu" class="dgridcenter">
+						<li role="menuitem">
+							<button
+								aria-haspopup="true"
+								:aria-expanded="showSub"
+								aria-label="browse"
+								@click="toggleSub"
+								class="nav-button"
+							>
+								Unterkünfte
+								<span :class="{ spanopen: showSub }"></span>
+							</button>
 
-								<Transition name="bottom"
-									><div class="submenu" v-show="showSub">
-										<ul>
-											<RouterLink
-												v-for="house in houses"
-												:to="`/house/${house.path}`"
-												:key="`house-${house.id}`"
-												class="sublink"
-												@click="closeNav"
-												>{{ house.name }}
-											</RouterLink>
-										</ul>
-									</div></Transition
-								>
-							</li>
-							<li role="menuitem">
-								<RouterLink class="dropdown-link" to="/kids" @click="closeNav">
-									Für die kleinen Gäste
-								</RouterLink>
-							</li>
-							<li role="menuitem">
-								<RouterLink class="dropdown-link" to="/dogs" @click="closeNav">
-									Urlaub mit Hund
-								</RouterLink>
-							</li>
-							<li role="menuitem">
-								<RouterLink
-									class="dropdown-link"
-									to="/umgebung"
-									@click="closeNav"
-								>
-									Umgebung
-								</RouterLink>
-							</li>
-							<li role="menuitem">
-								<RouterLink
-									class="dropdown-link"
-									:to="{ path: '/', hash: '#faq' }"
-									@click="closeNav"
-								>
-									Häufige Fragen
-								</RouterLink>
-							</li>
-							<li role="menuitem">
-								<RouterLink class="dropdown-link" to="/" @click="closeNav">
-									Heimathafen
-								</RouterLink>
-							</li>
-							<li role="menuitem">
-								<RouterLink class="dropdown-link" to="/" @click="closeNav">
-									nav = 85px height
-								</RouterLink>
-							</li>
-						</ul>
-					</div></Transition
-				>
-			</div>
+							<Transition name="bottom"
+								><div class="submenu" v-show="showSub">
+									<ul>
+										<RouterLink
+											v-for="house in houses"
+											:to="`/house/${house.path}`"
+											:key="`house-${house.id}`"
+											class="sublink"
+											@click="closeNav"
+											>{{ house.name }}
+										</RouterLink>
+									</ul>
+								</div></Transition
+							>
+						</li>
+						<li role="menuitem">
+							<RouterLink class="dropdown-link" to="/kids" @click="closeNav">
+								Für die kleinen Gäste
+							</RouterLink>
+						</li>
+						<li role="menuitem">
+							<RouterLink class="dropdown-link" to="/dogs" @click="closeNav">
+								Urlaub mit Hund
+							</RouterLink>
+						</li>
+						<li role="menuitem">
+							<RouterLink
+								class="dropdown-link"
+								to="/umgebung"
+								@click="closeNav"
+							>
+								Umgebung
+							</RouterLink>
+						</li>
+						<li role="menuitem">
+							<RouterLink
+								class="dropdown-link"
+								:to="{ path: '/', hash: '#faq' }"
+								@click="closeNav"
+							>
+								Häufige Fragen
+							</RouterLink>
+						</li>
+						<li role="menuitem">
+							<RouterLink class="dropdown-link" to="/" @click="closeNav">
+								Heimathafen
+							</RouterLink>
+						</li>
+						<li role="menuitem">
+							<RouterLink class="dropdown-link" to="/" @click="closeNav">
+								nav = 85px height
+							</RouterLink>
+						</li>
+					</ul>
+				</div></Transition
+			>
 		</div>
+		<button class="uppercase logo cl-text-light" @click="goHome">
+			<div><span>der</span>bes<br />ondere<br /><span>urlaub</span></div>
+		</button>
+		<button class="uppercase btn--cta" @click="goBooking">buchen</button>
+		<!-- <div class="nav-right dflexrow"></div> -->
 	</div>
 </template>
 
@@ -153,11 +152,10 @@ const navigateToHouse = () => {
 	/* height: 50px; */
 	background-color: var(--cl-bg-nav);
 	/* background-color: rgba(16, 9, 43, 0.03); */
-
 	justify-content: space-between;
 }
 .nav > * {
-	margin-block: auto;
+	/* margin-block: auto; */
 }
 
 /* open triangle for submenu */
@@ -341,7 +339,8 @@ const navigateToHouse = () => {
 
 .btn--cta {
 	align-self: center;
-	margin-right: 4rem;
+	/* justify-self: end; */
+	/* margin-right: 4rem; */
 }
 .btn--cta a {
 	color: var(--cl-dark-accent);

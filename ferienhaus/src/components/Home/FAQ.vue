@@ -5,7 +5,7 @@
 	>
 		<div class="accordion__content">
 			<div class="accordion__wrapper fs-copy">
-				<h2 class="fs-head-2 uppercase mb-5em ff-serif">FAQ</h2>
+				<h2 class="fs-head-2 mb-5em ff-serif">Häufige Fragen</h2>
 				<p class="fs-copy mb-5em">
 					Lorem ipsum, dolor Lorem ipsum dolor sit amet consectetur adipisicing
 					elit. Labore, sequi? sit amet consectetur adipisicing elit. Illum,
@@ -14,7 +14,7 @@
 			</div>
 			<div class="faq__wrapper fs-copy">
 				<AccPanel>
-					<template v-slot:title>Gibt es Internet? </template>
+					<template v-slot:title><p>Gibt es Internet?</p></template>
 					<template v-slot:content
 						><div id="faq-1">Lorem ipsum dolor sit.</div></template
 					>

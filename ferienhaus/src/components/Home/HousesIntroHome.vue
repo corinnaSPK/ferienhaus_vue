@@ -6,16 +6,16 @@
 
 		<div class="flex__wrapper">
 			<div class="intro__wrapper fs-copy">
-				<p class="houses__intro-copy fs-copy mb-3rem">
+				<!-- <p class="houses__intro-copy fs-copy mb-3rem">
 					Alle unsere Häuser sind modern und stilvoll eingerichtet, behalten
 					jedoch stets ihren individuellen Charme. Die Häuser werden von uns
 					laufend modernisiert und renoviert. Auch Ihre vierbeinigen Freunde
 					können den Urlaub bei uns genießen. Alle Grundstück sind komplett
 					eingezäunt und im Haus warten ein kuscheliges Hundebett sowie Wasser-
 					und Futternapf.
-				</p>
+				</p> -->
 			</div>
-			<div class="intro__list fs-copy">
+			<!-- <div class="intro__list fs-copy">
 				<ul>
 					<li class="mb-1em">
 						<svg
@@ -108,8 +108,26 @@
 						<p>Strand fußläufig erreichbar</p>
 					</li>
 				</ul>
-			</div>
+			</div> -->
 		</div>
+		<!-- <div class="icons__wrapper">
+			<div>
+				<i class="fa-solid fa-umbrella-beach"></i>
+				<p>
+					eingezäunter <br />
+					Garten
+				</p>
+			</div>
+			<div>
+				<i class="fa-solid fa-wifi"></i>
+				<p>WLan</p>
+			</div>
+			<div>
+				<i class="fa-solid fa-fire"></i>
+				<p>Kamin</p>
+			</div>
+			sauna wifi eingezäunter garten trockner waschmaschine stellplatz strandnah
+		</div> -->
 	</div>
 </template>
 
@@ -177,5 +195,21 @@ li p {
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 5rem;
+}
+.icons__wrapper {
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+
+	justify-content: center;
+}
+.icons__wrapper i {
+	width: 10rem;
+	font-size: 5rem;
+	/* width: 10rem; */
+}
+
+.houses__intro-copy {
+	width: 80ch;
 }
 </style>

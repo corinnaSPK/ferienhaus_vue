@@ -1,8 +1,11 @@
 <template>
 	<div class="p-3">
 		<div class="intro__copy mb-5rem mcenter width-copy">
-			<h1 class="fs-head-main fw-lighter mb-5em ff-serif">{{ house.name }}</h1>
-			<h2 class="fs-head-2 fw-lighter mb-5em ff-serif">Willkommen</h2>
+			<h1 class="fs-head-main fw-lighter ff-serif">{{ house.name }}</h1>
+			<p class="fs-copy fw-lighter mb-3rem ff-sans space-1">
+				Straße 23, 12345 Ort
+			</p>
+			<h2 class="fs-head-2 fw-lighter mb-3rem ff-serif">Willkommen</h2>
 			<p class="fs-copy">
 				{{ house.copylong }}
 			</p>
